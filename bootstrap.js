@@ -28,10 +28,7 @@ $(document).ready(function(){
    $("#chest").offset({left:(position.left + (width * 0.42)),top:(position.top + (height * 0.2))});
    $("#chest").trigger('click')
  });
- //$("chestarea").on('click', function(){
- //$("#chest").offset({left:(position.left + (width * 0.42)),top:(position.top + (height * 0.6))});
-//  $('#chest').trigger('click')
- //});
+
  //choose hero
  var heroes = document.getElementsByClassName('heroesdesc')
  var avatars = document.getElementsByClassName('heroesav')

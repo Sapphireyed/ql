@@ -220,6 +220,7 @@
 							zoom.move( e.originalEvent.touches[0] || e.originalEvent.changedTouches[0] );
 						})
 						.on('touchend.zoom', function (e) {
+							$("#map").css({'visibility':'visible'})
 							e.preventDefault();
 							if (touched) {
 								touched = false;
