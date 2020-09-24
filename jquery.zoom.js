@@ -215,6 +215,7 @@
 							}
 						})
 						.on('touchmove.zoom', function (e) {
+							$("#map").css({'visibility':'hidden'})
 							e.preventDefault();
 							zoom.move( e.originalEvent.touches[0] || e.originalEvent.changedTouches[0] );
 						})

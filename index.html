@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="style.css">
+<!--<link rel="stylesheet" href="style.css">-->
 <script src="https://kit.fontawesome.com/0b5e8097db.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <!-- jQuery library -->
@@ -52,10 +52,16 @@ h1 {text-align:center}
 #shop {
   display:block;
   position:absolute;
-  color:transparent;
+  color:;
 /*  left:33%;
   top:57%;*/
-
+}
+#chest {
+  display:block;
+  position:absolute;
+  color:;
+/*  top: 30%;
+  left:42%;*/
 }
 @keyframes slide {
   from {left: -5000px}
@@ -101,8 +107,11 @@ h1 {text-align:center}
         <span class='zoom' id='ex1'><img class="mx-auto mt-n5" src="img/map.png" alt="map" usemap="#main-map" id="map">
           <map name="main-map">
               <area shape="circle" coords="340,352,60" alt="shop" href="#" id="shoparea">
+              <area shape="circle" coords="540,206,60" alt="chest" href="#" id="chestarea">
           </map>
           <a id="shop" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">x</a>
+          <a id="chest" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">x</a>
+
       </div>
     </div>
 

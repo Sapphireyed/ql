@@ -17,13 +17,21 @@ $(document).ready(function(){
    let start = setInterval(slideFeature, 1200);
  });
  // popover responsive
- $("#shoparea").on('click', function(){
  var width = $("#map").width();
  var height = $("#map").height();
  var position = $("#map").offset();
+ $("#shoparea").on('click', function(){
  $("#shop").offset({left:(position.left + (width * 0.27)),top:(position.top + (height * 0.33))});
   $('#shop').trigger('click')
  });
+ $("#chestarea").click(function(){
+   $("#chest").offset({left:(position.left + (width * 0.42)),top:(position.top + (height * 0.2))});
+   $("#chest").trigger('click')
+ });
+ //$("chestarea").on('click', function(){
+ //$("#chest").offset({left:(position.left + (width * 0.42)),top:(position.top + (height * 0.6))});
+//  $('#chest').trigger('click')
+ //});
  //choose hero
  var heroes = document.getElementsByClassName('heroesdesc')
  var avatars = document.getElementsByClassName('heroesav')
