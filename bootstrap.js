@@ -1,6 +1,30 @@
 $(document).ready(function(){
   // enebles bs4 tootips
  $('[data-toggle="popover"]').popover();
+//dark mode
+  var body = document.body;
+  var light = true;
+  function dark() {
+    body.classList.remove('bg-light');
+    body.classList.add('bg-dark');
+    $('body').children().find('.text-secondary').removeClass('text-secondary').addClass('text-white');
+    light = false;
+  }
+  function lightMode() {
+    body.classList.add('bg-light')
+    body.classList.remove('bg-dark')
+    $('body').children().find('.text-white').removeClass('text-white').addClass('text-secondary');
+    light= true;
+  }
+ document.getElementById('dark').onclick = function() {
+  if (light) {
+    dark();
+  } else {
+    lightMode();
+  }
+};
+
+
  // slide in features
  $(document).on('scroll', function(){
    let i = 0;
