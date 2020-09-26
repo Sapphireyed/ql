@@ -38,9 +38,11 @@ h1 {text-align:center}
   background-color: #343a40;
   color:white;
 }
-.heroes img {padding:10px}
-.heroes h3 {text-align: center;}
+.heroes img:first-child {padding:10px; cursor: pointer;}
+.heroesdesc img {max-width:120%; width:100%}
+.heroes h4 {text-align: center;}
 .heroesdesc {display:none}
+/*.heroesdesc h5:first-child {margin-top:70px}*/
 /* section about game features stles*/
 .features li:first-child {background-color: transparent}
 .features li{left:-5000px}
@@ -49,6 +51,19 @@ h1 {text-align:center}
   animation: slide;
   animation-duration: 2s;
 }
+#zoommap {
+  position:absolute;
+  right:10px;
+  top:20%;
+}
+#prev, #next {
+  position: absolute;
+  top:62%;
+  display:none;
+  z-index: 1;
+}
+#next {left:35%}
+#prev {left: 5%}
 #shop {
   display:block;
   position:absolute;
@@ -70,6 +85,11 @@ h1 {text-align:center}
 
 @media only screen and (max-width: 700px) {
   .popover {max-width: 50%}
+  #zoommap {top:30%}
+  .abilities {margin-left: 5px}
+  .deck {margin-left: 5px}
+  #prev, #next {top:24%}
+  #next {left:92%}
 }
 </style>
 </head>
@@ -98,13 +118,13 @@ h1 {text-align:center}
 
 <section class="container shadow" style="margin-top: 80px">
   <div class="row">
-    <div class="exactdiv col-md-9 row">
+    <div class="exactdiv col-lg-9 row">
+      <button type="button" class="btn text-secondary border rounded" id="next" onclick="turnRightKnight()"><b> > </b></button>
+      <button type="button" class="btn text-secondary border rounded" id="prev" onclick="turnLeftKnight()"><b> < </b></button>
        <div class="row main py-3">
         <h1 class="mx-auto text-secondary col-12">Welcome to <img src="logo.png" width="270" style="max-width:100%;"></h1>
-        <div class="col-12">
-          <button type="button" id="zoommap" class="btn text-secondary float-right"><i class="fa fa-search-plus fa-lg"></i></button>
-        </div>
-        <span class='zoom' id='ex1'><img class="mx-auto mt-n5" src="img/map.png" alt="map" usemap="#main-map" id="map">
+          <button type="button" id="zoommap" class="btn text-secondary"><i class="fa fa-search-plus fa-lg"></i></button>
+        <span class='zoom' id='ex1'><img class="mx-auto" src="img/map.png" alt="map" usemap="#main-map" id="map">
           <map name="main-map">
               <area shape="circle" coords="340,352,60" alt="shop" href="#" id="shoparea">
               <area shape="circle" coords="540,206,60" alt="chest" href="#" id="chestarea">
@@ -116,25 +136,82 @@ h1 {text-align:center}
     </div>
 
 
-    <div class="col-md-3 heroes py-3" style="background-color: #E6E6E6">
+    <div class="col-lg-3 heroes py-3" style="background-color: #E6E6E6">
       <h2 class="text-light bg-secondary py-2 rounded-lg" style="text-align:center">Choose your hero</h2>
-      <div class="row row-cols-2">
-        <div class="col heroesav">
-          <img class="mx-auto d-block" src="img/knightav.png" alt="knight" id="knight">
-          <h3 class="mx-auto">Knight</h3>
-          <div class="heroesdesc mx-auto row" id="knightdesc">
-            <h1 class="mx-auto pt-3 col-12">Knight</h1>
-            <img class="mx-auto" src="img/knight1.png" alt="map" usemap="#map-map">
-              <map name="map-map">
-                  <area shape="circle" coords="185,195,135" alt="shop" href="#" id="shoparea1">
-                  <a id="shop1" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">x</a></area>
-              </map>
+      <div class="row row-cols-2 row-cols-md-4 row-cols-lg-2">
 
+        <div class="col heroesav">
+          <img class="mx-auto d-block" src="img/knightav.png" alt="knight" id="knightav">
+          <h4 class="mx-auto">Knight</h4>
+
+          <div class="heroesdesc mx-auto" id="knightdesc">
+            <div class="row">
+              <div class="col-sm-5 mt-2 mx-auto">
+                <h1 class="text-secondary mx-auto mb-n3">Knight</h1>
+                <img class="" src="img/knight1.png" alt="knight" id="knight">
+              </div>
+              <div class="col-sm text-center pr-md-5 pt-3">
+                <div class='card rounded-lg ml-4 ml-lg-1'>
+                  <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
+                  <p class="px-3 py-2"><i>As a skilled fighter, the knight knows when to attack and when to defend</i></p>
+                </div>
+                <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
+                  <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
+                  <p class="pl-3">None</p>
+                </div>
+                <div class="row px-3 mt-4 abilities">
+                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
+                  <div class="col card pt-2 mt-1">
+                    <h6>Arrow Rain</h6>
+                    <p><i>Deal 10 damage to an enemy</i></p>
+                  </div>
+                  <div class="col card pt-2 mt-1">
+                    <h6>Arrow Rain</h6>
+                    <p><i>Deal 10 damage to an enemy</i></p>
+                  </div>
+                </div>
+                <div class="row px-3 mt-4 abilities">
+                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
+                  <div class="col card pt-2 mt-1">
+                    <h6>Arrow Rain</h6>
+                    <p><i>Deal 10 damage to an enemy</i></p>
+                  </div>
+                  <div class="col card pt-2 mt-1">
+                    <h6>Arrow Rain</h6>
+                    <p><i>Deal 10 damage to an enemy</i></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row px-4 py-2 deck">
+              <div class='col-1  mx-auto d-none d-lg-block'>
+                <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
+              </div>
+              <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
+                <h5 class='text-center text-light my-1'>Deck</h5>
+              </div>
+              <div class='col-md-2 col-6 mx-auto'>
+                <img src="img/cards/heavyStrike.png">
+                <p class='text-center'>x 4</p>
+              </div>
+              <div class='col-md-2 col-6 mx-auto'>
+                <img src="img/cards/heavyStrike.png">
+                <p class='text-center'>x 4</p>
+              </div>
+              <div class='col-md-2 col-6 mx-auto'>
+                <img src="img/cards/heavyStrike.png">
+                <p class='text-center'>x 4</p>
+              </div>
+              <div class='col-md-2 col-6  mx-auto'>
+                <img src="img/cards/heavyStrike.png">
+                <p class='text-center'>x 4</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col heroesav">
           <img class="mx-auto d-block" src="img/elemav.png" alt="Elementalist">
-          <h3 class="mx-auto">Elem</h3>
+          <h4 class="mx-auto">Elementalist</h4>
           <div class="row heroesdesc" id="elemdesc">
             <h1 class="mx-auto pt-3">Elementalist</h1>
             <img class="mx-auto" src="img/mainmap.png" alt="map" usemap="#map-map">
@@ -147,27 +224,27 @@ h1 {text-align:center}
         </div>
         <div class="col heroesav">
           <img class="mx-auto d-block" src="img/knightav.png" alt="knight" width="">
-          <h3 class="mx-auto">Rogue</h3>
+          <h4 class="mx-auto">Rogue</h4>
         </div>
         <div class="col heroesav">
           <img class="mx-auto d-block" src="img/knightav.png" alt="knight" width="">
-          <h3 class="mx-auto">Barbarian</h3>
+          <h4 class="mx-auto">Barbarian</h4>
         </div>
         <div class="col heroesav">
           <img class="mx-auto d-block" src="img/knightav.png" alt="knight" width="">
-          <h3 class="mx-auto">Barbarian</h3>
+          <h4 class="mx-auto">Cleric</h4>
         </div>
         <div class="col heroesav">
           <img class="mx-auto d-block" src="img/knightav.png" alt="knight" width="">
-          <h3 class="mx-auto">Barbarian</h3>
+          <h4 class="mx-auto">Barbarian</h4>
         </div>
         <div class="col heroesav">
           <img class="mx-auto d-block" src="img/knightav.png" alt="knight" width="">
-          <h3 class="mx-auto">Barbarian</h3>
+          <h4 class="mx-auto">Barbarian</h4>
         </div>
         <div class="col heroesav">
           <img class="mx-auto d-block" src="img/knightav.png" alt="knight" width="">
-          <h3 class="mx-auto">Barbarian</h3>
+          <h4 class="mx-auto">Barbarian</h4>
         </div>
       </div>
       <div class="map">
@@ -177,6 +254,7 @@ h1 {text-align:center}
 </div>
 </section>
 
+<!--
 <section class="container" style="margin-top: 80px">
   <div class="row shadow">
     <div class="col-lg-2 col-sm-4 my-auto">
@@ -214,7 +292,7 @@ h1 {text-align:center}
       </ul>
     </div>
   </div>
-</section>
+</section> -->
 <script> //responsive img mainmap
 ImageMap('img[usemap]')
 </script>
