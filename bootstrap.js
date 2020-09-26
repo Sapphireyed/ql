@@ -53,7 +53,7 @@ $(document).ready(function(){
      $(".map").hide();
      $('.heroes h2:first-child').click(function(){
        $('.heroesav').toggle();
-       $('.map').toggle();
+       $('.map').show();
      })
    }
    // map button to come back to main map view.
@@ -62,6 +62,10 @@ $(document).ready(function(){
      $(".main").show()
      $('#zoommap').show();
      $('#prev, #next').hide()
+     if ( x.matches) {
+       $(".heroesav").hide();
+       $(".map").hide();
+     }
    })
 //zoom map
   $('#zoommap').on('click', function(){
