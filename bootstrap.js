@@ -1,4 +1,10 @@
-$(document).ready(function(){
+$.noConflict();
+
+jQuery(document).ready(function($){
+  //display 1st hero - knight - on load
+  $(window).on('load', function(){
+    $('#knightdesc').trigger('click');
+  })
   // enebles bs4 tootips
  $('[data-toggle="popover"]').popover();
 //dark mode
@@ -44,25 +50,35 @@ $(document).ready(function(){
  var width = $("#map").width();
  var height = $("#map").height();
  var position = $("#map").offset();
- $("#shoparea").on('click', function(){
- $("#shop").offset({left:(position.left + (width * 0.27)),top:(position.top + (height * 0.33))});
-  $('#shop').trigger('click')
- });
- $("#chestarea").click(function(){
-   $("#chest").offset({left:(position.left + (width * 0.42)),top:(position.top + (height * 0.2))});
-   $("#chest").trigger('click')
- });
+
+$('.area').hover(function(){
+  if ($('a', this).attr('id') == 'shop'){
+    $('a', this).offset({left:(position.left + (width * 0.27)),top:(position.top + (height * 0.33))});
+  } else if ($('a', this).attr('id') == 'chest') {
+    $('a', this).offset({left:(position.left + (width * 0.42)),top:(position.top + (height * 0.2))});
+  }
+  $('a', this).trigger('click');
+}, function(){
+  $('a', this).trigger('click')
+});
+// $("#shoparea").on('mouseenter', function(){
+//  $("#shop").offset({left:(position.left + (width * 0.27)),top:(position.top + (height * 0.33))});
+//  $('#shop').trigger('click');
+//});
+
+// $("#chestarea").mouseenter(function(){
+//   $("#chest").offset({left:(position.left + (width * 0.42)),top:(position.top + (height * 0.2))});
+//   $("#chest").trigger('click')
+// });
+
 
  //choose hero
- var heroes = document.getElementsByClassName('heroesdesc')
- var avatars = document.getElementsByClassName('heroesav')
    $(".heroesav").each(function(){
      $(this).on('click', function(event){
-       //hide zoom button, all heroes and main map
-       $('#zoommap').hide();
-       $('.main, .heroesdesc').hide();
-       //show chosen hero in the div where main map was.
-       //Use clon to make the function work multiple times.
+       //hide all heroes
+       $('.heroesdesc').hide();
+       //show chosen hero
+       //Use clone to make the function work multiple times.
        //Hide chosen hero in other places (the div from which it was cloned)
        $(this).find('.heroesdesc').show();
        $(this).find('.heroesdesc').clone().appendTo('.exactdiv');
@@ -95,15 +111,28 @@ $(document).ready(function(){
   $('#zoommap').on('click', function(){
     $('#ex1').zoom();
   })
- });
+
  //turn around hero
  var i = 0;
  let knightpositions = [
-   "img/knight1.png",
-   "img/knight2.png",
-   "img/knight3.png",
-   "img/knight5.png",
-   "img/knight.png"
+   "img//heros/witcher1.png",
+   "img//heros/witcher-l1.png",
+   "img//heros/witcher-l2.png",
+   "img//heros/witcher-l3.png",
+   "img//heros/witcher0.png",
+   "img/heros/witcher-r3.png",
+   "img/heros/witcher-r2.png",
+   "img/heros/witcher-r1.png"
+ ];
+ let elempositions = [
+   "img//heros/knight1.png",
+   "img//heros/knight-l1.png",
+   "img//heros/knight-l2.png",
+   "img//heros/knight-l3.png",
+   "img//heros/knight0.png",
+   "img/heros/knight-r3.png",
+   "img/heros/knight-r2.png",
+   "img/heros/knight-r1.png"
  ];
 
  function turnLeftKnight() {
@@ -126,3 +155,6 @@ $(document).ready(function(){
      i--;
    }
  }
+ $('#prev').click(turnLeftKnight);
+ $('#next').click(turnRightKnight);
+ });
