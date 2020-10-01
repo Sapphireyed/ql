@@ -71,21 +71,6 @@ $('.area').hover(function(){
 //   $("#chest").trigger('click')
 // });
 
-
- //choose hero
-   $(".heroesav").each(function(){
-     $(this).on('click', function(event){
-       //hide all heroes
-       $('.heroesdesc').hide();
-       //show chosen hero
-       //Use clone to make the function work multiple times.
-       //Hide chosen hero in other places (the div from which it was cloned)
-       $(this).find('.heroesdesc').show();
-       $(this).find('.heroesdesc').clone().appendTo('.exactdiv');
-       $(this).find('.heroesdesc').hide()
-       $('#prev, #next').show()
-     })
-   })
    // choose hero menu to toggle on small screens
    var x = window.matchMedia("(max-width: 760px)")
    if ( x.matches) {
@@ -111,20 +96,25 @@ $('.area').hover(function(){
   $('#zoommap').on('click', function(){
     $('#ex1').zoom();
   })
-
+  //choose hero
+    $(".heroesav").each(function(){
+      $(this).on('click', function(event){
+        //hide all heroes
+        $('.heroesdesc').hide();
+        // remove previous heroesdesc for turnAroundHrto to work properly
+        $('.exactdiv').empty()
+        i=0;
+        //show chosen hero
+        //Use clone to make the function work multiple times.
+        //Hide chosen hero in other places (the div from which it was cloned)
+        $(this).find('.heroesdesc').show();
+        $(this).find('.heroesdesc').clone().appendTo('.exactdiv');
+        $(this).find('.heroesdesc').hide()
+      })
+    })
  //turn around hero
  var i = 0;
  let knightpositions = [
-   "img//heros/witcher1.png",
-   "img//heros/witcher-l1.png",
-   "img//heros/witcher-l2.png",
-   "img//heros/witcher-l3.png",
-   "img//heros/witcher0.png",
-   "img/heros/witcher-r3.png",
-   "img/heros/witcher-r2.png",
-   "img/heros/witcher-r1.png"
- ];
- let elempositions = [
    "img//heros/knight1.png",
    "img//heros/knight-l1.png",
    "img//heros/knight-l2.png",
@@ -134,27 +124,154 @@ $('.area').hover(function(){
    "img/heros/knight-r2.png",
    "img/heros/knight-r1.png"
  ];
+ let elempositions = [
+   "img//heros/elem1.png",
+   "img//heros/elem-l1.png",
+   "img//heros/elem-l2.png",
+   "img//heros/elem-l3.png",
+   "img//heros/elem0.png",
+   "img/heros/elem-r3.png",
+   "img/heros/elem-r2.png",
+   "img/heros/elem-r1.png"
+ ];
+ let roguepositions = [
+   "img//heros/rogue1.png",
+   "img//heros/rogue-l1.png",
+   "img//heros/rogue-l2.png",
+   "img//heros/rogue-l3.png",
+   "img//heros/rogue0.png",
+   "img/heros/rogue-r3.png",
+   "img/heros/rogue-r2.png",
+   "img/heros/rogue-r1.png"
+ ];
+ let barbpositions = [
+   "img//heros/barb1.png",
+   "img//heros/barb-l1.png",
+   "img//heros/barb-l2.png",
+   "img//heros/barb-l3.png",
+   "img//heros/barb0.png",
+   "img/heros/barb-r3.png",
+   "img/heros/barb-r2.png",
+   "img/heros/barb-r1.png"
+ ];
+ let clericpositions = [
+   "img//heros/cleric1.png",
+   "img//heros/cleric-l1.png",
+   "img//heros/cleric-l2.png",
+   "img//heros/cleric-l3.png",
+   "img//heros/cleric0.png",
+   "img/heros/cleric-r3.png",
+   "img/heros/cleric-r2.png",
+   "img/heros/cleric-r1.png"
+ ];
+ let hunterpositions = [
+   "img//heros/hunter1.png",
+   "img//heros/hunter-l1.png",
+   "img//heros/hunter-l2.png",
+   "img//heros/hunter-l3.png",
+   "img//heros/hunter0.png",
+   "img/heros/hunter-r3.png",
+   "img/heros/hunter-r2.png",
+   "img/heros/hunter-r1.png"
+ ];
+ let witcherpositions = [
+   "img//heros/witcher1.png",
+   "img//heros/witcher-l1.png",
+   "img//heros/witcher-l2.png",
+   "img//heros/witcher-l3.png",
+   "img//heros/witcher0.png",
+   "img/heros/witcher-r3.png",
+   "img/heros/witcher-r2.png",
+   "img/heros/witcher-r1.png"
+ ];
+ let shamanpositions = [
+   "img//heros/shaman1.png",
+   "img//heros/shaman-l1.png",
+   "img//heros/shaman-l2.png",
+   "img//heros/shaman-l3.png",
+   "img//heros/shaman0.png",
+   "img/heros/shaman-r3.png",
+   "img/heros/shaman-r2.png",
+   "img/heros/shaman-r1.png"
+ ];
 
- function turnLeftKnight() {
-   var knightel = document.getElementById('knight')
-   if (i < knightpositions.length-1) {
-     knightel.src = knightpositions[i+1];
-     i++;
-   } else {
-     knightel.src = knightpositions[0]
-     i=0;
-   }
- }
- function turnRightKnight() {
-   var knightel = document.getElementById('knight')
-   if (i == 0) {
-     knightel.src = knightpositions[knightpositions.length-1];
-     i = knightpositions.length-1;
-   } else if (i < knightpositions.length && i !== 0){
-     knightel.src = knightpositions[i-1]
-     i--;
-   }
- }
- $('#prev').click(turnLeftKnight);
- $('#next').click(turnRightKnight);
+$('#prev').click(function(){ //turn left
+  var heroes = $('.exactdiv img')
+  var heropos;
+  var hero;
+  //determine for which hero the function is ran
+  if (heroes.attr('id') == 'knight') {
+    heropos = knightpositions;
+    hero = $('#knight')
+  } else if (heroes.attr('id') == 'elem') {
+    heropos = elempositions;
+    hero = $('#elem')
+  } else if (heroes.attr('id') == 'rogue') {
+    heropos = roguepositions;
+    hero = $('#rogue')
+  } else if (heroes.attr('id') == 'barbarian') {
+    heropos = barbpositions;
+    hero = $('#barbarian')
+  } else if (heroes.attr('id') == 'cleric') {
+    heropos = clericpositions;
+    hero = $('#cleric')
+  } else if (heroes.attr('id') == 'huntsman') {
+    heropos = hunterpositions;
+    hero = $('#huntsman')
+  } else if (heroes.attr('id') == 'witcher') {
+    heropos = witcherpositions;
+    hero = $('#witcher')
+  } else if (heroes.attr('id') == 'shaman') {
+    heropos = shamanpositions;
+    hero = $('#shaman')
+  }
+  //run the function itself
+    if (i < heropos.length-1) {
+       hero.attr('src', heropos[i+1]);
+       i++;
+     } else {
+      hero.attr('src', heropos[0]);
+      i=0;
+     }
+})
+$('#next').click(function(){ //turn right
+  var heroes = $('.exactdiv img')
+  var heropos;
+  var hero;
+  //determine for which hero the function is ran
+  if (heroes.attr('id') == 'knight') {
+    heropos = knightpositions;
+    hero = $('#knight')
+  } else if (heroes.attr('id') == 'elem') {
+    heropos = elempositions;
+    hero = $('#elem')
+  } else if (heroes.attr('id') == 'rogue') {
+    heropos = roguepositions;
+    hero = $('#rogue')
+  } else if (heroes.attr('id') == 'barb') {
+    heropos = barbpositions;
+    hero = $('#barb')
+  } else if (heroes.attr('id') == 'cleric') {
+    heropos = clericpositions;
+    hero = $('#cleric')
+  } else if (heroes.attr('id') == 'huntsman') {
+    heropos = hunterpositions;
+    hero = $('#huntsman')
+  } else if (heroes.attr('id') == 'witcher') {
+    heropos = witcherpositions;
+    hero = $('#witcher')
+  } else if (heroes.attr('id') == 'shaman') {
+    heropos = shamanpositions;
+    hero = $('#shaman')
+  }
+  //run the function itself
+  if (i == 0) {
+    hero.attr('src', heropos[heropos.length-1])
+    i = heropos.length-1;
+  } else if (i < heropos.length && i !== 0){
+    hero.attr('src', heropos[i-1]);
+    i--;
+  }
+})
+
  });

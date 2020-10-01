@@ -67,8 +67,7 @@ h1 {text-align:center}
 }
 #prev, #next {
   position: absolute;
-  top:66%;
-  display:none;
+  top:55%;
   z-index: 1;
 }
 #next {left:30%}
@@ -206,9 +205,10 @@ h1 {text-align:center}
 
 <section class="container shadow" style="margin-top: 80px">
   <div class="row">
-    <div class="exactdiv col-lg-9 row">
-      <button type="button" class="btn text-secondary border rounded" id="next" onclick="turnRightKnight()"><b> > </b></button>
-      <button type="button" class="btn text-secondary border rounded" id="prev" click="turnLeftKnight()"><b> < </b></button>
+    <div class="col-lg-9 row">
+      <div class='exactdiv'></div>
+      <button type="button" class="btn text-secondary border rounded" id="next"><b> > </b></button>
+      <button type="button" class="btn text-secondary border rounded" id="prev"><b> < </b></button>
       <div class='col 12 pt-3'>
         <h2 class="text-center text-light bg-secondary rounded-lg py-2">Become a legendary Hero</h2>
       </div>
@@ -225,7 +225,7 @@ h1 {text-align:center}
           <div class="heroesdesc mx-auto" id="knightdesc">
             <div class="row">
               <div class="col-md-4 mt-2 mx-auto my-auto">
-                <img class="" src="img/heros/witcher1.png" alt="knight" id="knight">
+                <img class="" src="img/heros/knight1.png" alt="knight" id="knight">
               </div>
               <div class="col-md text-center pr-md-5">
                 <h1 class="text-secondary mx-auto mb-n3 pt-2">Knight</h1>
@@ -361,7 +361,7 @@ h1 {text-align:center}
           <div class="heroesdesc mx-auto" id="roguedesc">
             <div class="row">
               <div class="col-md-4 mt-2 mx-auto my-auto">
-                <img class="" src="img/knight1.png" alt="rogue" id="rogue">
+                <img class="" src="img/heros/rogue1.png" alt="rogue" id="rogue">
               </div>
               <div class="col-md text-center pr-md-5">
                 <h1 class="text-secondary mx-auto mb-n3 pt-2">Rogue</h1>
@@ -429,7 +429,7 @@ h1 {text-align:center}
           <div class="heroesdesc mx-auto" id="knightdesc">
             <div class="row">
               <div class="col-md-4 mt-2 mx-auto my-auto">
-                <img class="" src="img/knight1.png" alt="barbarian" id="barbarian">
+                <img class="" src="img/heros/barb1.png" alt="barbarian" id="barbarian">
               </div>
               <div class="col-md text-center pr-md-5">
                 <h1 class="text-secondary mx-auto mb-n3 pt-2">Barbarian</h1>
@@ -494,10 +494,10 @@ h1 {text-align:center}
         <div class="col heroesav">
           <img class="mx-auto d-block" src="img/heros/HeroPortraits/CLERIC.png" alt="cleric" id="cleric">
           <h4 class="mx-auto" id-'heroName'>Cleric</h4>
-          <div class="heroesdesc mx-auto" id="knightdesc">
+          <div class="heroesdesc mx-auto" id="clericdesc">
             <div class="row">
               <div class="col-md-4 mt-2 mx-auto my-auto">
-                <img class="" src="img/knight1.png" alt="cleric" id="cleric">
+                <img class="" src="img/heros/cleric1.png" alt="cleric" id="cleric">
               </div>
               <div class="col-md text-center pr-md-5">
                 <h1 class="text-secondary mx-auto mb-n3 pt-2">Cleric</h1>
@@ -562,13 +562,13 @@ h1 {text-align:center}
         <div class="col heroesav">
           <img class="mx-auto d-block" src="img/heros/HeroPortraits/HUNTSMAN.png" alt="huntsman" id="huntsmanav">
           <h4 class="mx-auto" id-'heroName'>Huntsman</h4>
-          <div class="heroesdesc mx-auto" id="huntsman">
+          <div class="heroesdesc mx-auto" id='huntsmndesc'>
             <div class="row">
               <div class="col-md-4 mt-2 mx-auto my-auto">
-                <img class="" src="img/knight1.png" alt="huntsman" id="huntsman">
+                <img class="" src="img/heros/hunter1.png" alt="huntsman" id="huntsman">
               </div>
               <div class="col-md text-center pr-md-5">
-                <h1 class="text-secondary mx-auto mb-n3 pt-2">Knight</h1>
+                <h1 class="text-secondary mx-auto mb-n3 pt-2">Huntsman</h1>
                 <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
                   <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
                   <p class="px-3 py-2"><i>As a skilled fighter, the knight knows when to attack and when to defend</i></p>
@@ -633,10 +633,10 @@ h1 {text-align:center}
           <div class="heroesdesc mx-auto" id="witcherdesc">
             <div class="row">
               <div class="col-md-4 mt-2 mx-auto my-auto">
-                <img class="" src="img/heros/witcher1.png" alt="knight" id="knight">
+                <img class="" src="img/heros/witcher1.png" alt="knight" id="witcher">
               </div>
               <div class="col-md text-center pr-md-5">
-                <h1 class="text-secondary mx-auto mb-n3 pt-2">Knight</h1>
+                <h1 class="text-secondary mx-auto mb-n3 pt-2">Witcher</h1>
                 <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
                   <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
                   <p class="px-3 py-2"><i>As a skilled fighter, the knight knows when to attack and when to defend</i></p>
@@ -701,7 +701,7 @@ h1 {text-align:center}
           <div class="heroesdesc mx-auto" id="shamandesc">
             <div class="row">
               <div class="col-md-4 mt-2 mx-auto my-auto">
-                <img class="" src="img/knight1.png" alt="shaman" id="shaman">
+                <img class="" src="img/heros/shaman1.png" alt="shaman" id="shaman">
               </div>
               <div class="col-md text-center pr-md-5">
                 <h1 class="text-secondary mx-auto mb-n3 pt-2">Shaman</h1>
