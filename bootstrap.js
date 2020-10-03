@@ -275,7 +275,7 @@ $('#next').click(function(){ //turn right
 })
 //monsters table
 $(window).on('load', function(){
-  $('.monsters').load('https://localhost/ql/img/monsternames.html', function(){
+  $('.monsters').load('http://cors.io/?https://localhost/ql/img/monsternames.html', function(){
     $('.monsters').trigger('click');
   });
   $('.monsters').click(function() {
