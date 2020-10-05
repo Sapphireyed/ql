@@ -274,22 +274,30 @@ $('#next').click(function(){ //turn right
   }
 })
 //monsters collection
-$(window).on('load', function(){
-  $('.monsters').load('img/monsternames1.html', function(){
+$(window).on('load', function(){ //on window load load monsters info from external file
+  $('.monsters').load('http://localhost/ql/img/monsternames1.html', function(){
     $('.monsters').trigger('click');
   });
   $('.monsters').click(function() {
     var mNames = $('.monsters');
-    var mArray = mNames.html().split(/\n/);
-    var index = mArray.indexOf('monsternames.txt')
-    mArray.splice(index,1)
+    var mArrayAll = mNames.html().split(/\n/); //split info frome xternal file to an array (each item is 1 enemy info)
+    var mArray;
+    var index;
     var i;
-    for (i=0; i < mArray.length-1; i++) {
-      var x = $('.monster').append('<div class="col-md-4"><div class="card mb-2"><h5 class="text-light bg-secondary rounded text-center mb-2">'
-      + mArray[i].toLowerCase() + '</h5><img class="d-block mx-auto shadow-lg" width="180" src="img/monsters/'
-      + mArray[i] + '"></img><br><div></div>');
-      $('.monsters').hide()
+    for (index=0; index < mArrayAll.length; index++) { //split each array item into seperate arrays
+      //mArray[i] holds specific data about a specific (from mArrayAll[index]) monster (name, world, ability)
+      mArray = mArrayAll[index].split(/\;/);
+      //add html elements, each holding specific enemy
+      for (i=0; i < mArray.length-1; i+=2) {
+        var monsterName = mArray[0].substring(0, mArray[0].length-4); //remove .PNG from monster name
+        $('.monster').append('<div class="col-lg-4 col-sm-6"><div class="card mb-2"><h5 class="text-light bg-secondary rounded text-center">'
+        + monsterName.toLowerCase() + '</h5><div class="row mx-auto mb-2"><div class="col-lg-5 col-10 mx-auto"><img class="rounded" src="img/monsters/'
+        + mArray[0] + '"></div><div class="col my-auto mx-2"><p>Ability: wdw<br>' + mArray[2] + '</p><p>Worlds: <br>' + mArray[1] + '</div></div><div></div>');
+        $('.monsters').hide()
+      }
     }
+  //  mNames.html(jQuery.type(mNames.html().split(/\n/)));
+  //  mNames.html(mArray.length)
   })
 })
 
