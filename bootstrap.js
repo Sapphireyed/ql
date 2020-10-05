@@ -275,7 +275,7 @@ $('#next').click(function(){ //turn right
 })
 //monsters collection
 $(window).on('load', function(){ //on window load load monsters info from external file
-  $('.monsters').load('http://localhost/ql/img/monsternames1.html', function(){
+  $('.monsters').load('img/monsternames1.html', function(){
     $('.monsters').trigger('click');
   });
   $('.monsters').click(function() {
