@@ -290,8 +290,6 @@ $(window).on('load', function(){
       + mArray[i] + '"></img><br><div></div>');
       $('.monsters').hide()
     }
-  //  mNames.html(jQuery.type(mNames.html().split(/\n/)));
-  //  mNames.html(mArray.length)
   })
 })
 
