@@ -273,7 +273,7 @@ $('#next').click(function(){ //turn right
     i--;
   }
 })
-//monsters table
+//monsters collection
 $(window).on('load', function(){
   $('.monsters').load('img/monsternames1.html', function(){
     $('.monsters').trigger('click');
@@ -289,7 +289,6 @@ $(window).on('load', function(){
       + mArray[i].toLowerCase() + '</h5><img class="d-block mx-auto shadow-lg" width="180" src="img/monsters/'
       + mArray[i] + '"></img><br><div></div>');
       $('.monsters').hide()
-  //    x.after('<img class="col-md-4" width="20%" src="img/monsters/' + mArray[i] + '"></img>')
     }
   //  mNames.html(jQuery.type(mNames.html().split(/\n/)));
   //  mNames.html(mArray.length)
