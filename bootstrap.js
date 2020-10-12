@@ -1,7 +1,7 @@
 $.noConflict();
-
 jQuery(document).ready(function($){
   //display 1st hero - knight - on load
+  var x = window.matchMedia("(max-width: 760px)")
   $(window).on('load', function(){
     $('#knightdesc').trigger('click');
   })
@@ -32,8 +32,13 @@ jQuery(document).ready(function($){
 
 
  // slide in features
- $(document).on('scroll', function(){
-   let i = 0;
+ $(window).on('load', function(){
+let i = 0;
+if (x.matches) {
+  let startMob = setInterval(slideFeatureMob, 800);
+} else {
+  let start = setInterval(slideFeature, 800);
+}
    function slideFeature(){
      let features = document.querySelectorAll(".features li");
      if (i < features.length) {
@@ -44,7 +49,18 @@ jQuery(document).ready(function($){
        clearInterval(start)
      }
    }
-   let start = setInterval(slideFeature, 1200);
+   function slideFeatureMob(){
+     let featuresMob = document.querySelectorAll(".features-mob li");
+     if (i < featuresMob.length) {
+       featuresMob[i].classList.add('slideIn');
+       featuresMob[i].style.left = 0;
+       i++;
+     } else {
+       clearInterval(startMob)
+     }
+   }
+
+
  });
  // popover responsive
  var width = $("#map").width();
@@ -63,13 +79,9 @@ $('.area').hover(function(){
   $('.exactdiv img:first-child').css({'visibility':'visible'})
 });
 
-//choose world and eroes menu toggle on small screen
-var x = window.matchMedia("(max-width: 760px)")
+//choose heroes menu toggle on small screen
+
   if ( x.matches) {
-  //  $('.worldsav').hide();
-  //  $('.explore').click(function(){
-  //    $('.worldsav').toggle();
-  //  })
     $('.heroesav').hide();
     $(".map").hide();
     $('.heroes h2:first-child').click(function(){
@@ -288,16 +300,55 @@ $(window).on('load', function(){ //on window load load monsters info from extern
       //mArray[i] holds specific data about a specific (from mArrayAll[index]) monster (name, world, ability)
       mArray = mArrayAll[index].split(/\;/);
       //add html elements, each holding specific enemy
-      for (i=0; i < mArray.length-1; i+=2) {
-        var monsterName = mArray[0].substring(0, mArray[0].length-4); //remove .PNG from monster name
-        $('.monster').append('<div class="col-lg-4 col-sm-6"><div class="card mb-2"><h5 class="text-light bg-secondary rounded text-center">'
+      for (i=0; i < mArray.length-1 && mArray.length < 4; i+=2) {
+        var monsterName = mArray[0].substring(0, mArray[0].length-4).replace("_", " "); //remove .PNG from monster name
+        $('.monster').append('<div class="col-lg-4 col-sm-6 mItem"><div class="card mb-2"><h5 class="mName text-light bg-secondary rounded text-center">'
         + monsterName.toLowerCase() + '</h5><div class="row mx-auto mb-2"><div class="col-lg-5 col-10 mx-auto"><img class="rounded" src="img/monsters/'
-        + mArray[0] + '"></div><div class="col my-auto mx-2"><p>Ability: wdw<br>' + mArray[2] + '</p><p>Worlds: <br>' + mArray[1] + '</div></div><div></div>');
-        $('.monsters').hide()
+        + mArray[0] + '"></div><div class="col my-auto"><p>Ability: <br>' + mArray[2] + '</p><p class="pWorlds">Worlds: <br>' + mArray[1] + '</div></div><div></div>');
+        $('.monsters').hide();
+      }
+      for (i=0; i < mArray.length-1 && mArray.length == 4; i+=3) { //adds bosses with red background around name
+        var monsterName = mArray[0].substring(0, mArray[0].length-4).replace("_", " "); //remove .PNG from monster name
+        $('.monster').append('<div class="col-lg-4 col-sm-6 mItem"><div class="card mb-2"><h5 class="mName text-light bg-danger rounded text-center">'
+        + monsterName.toLowerCase() + '</h5><div class="row mx-auto mb-2"><div class="col-lg-5 col-10 mx-auto"><img class="rounded" src="img/monsters/'
+        + mArray[0] + '"></div><div class="col my-auto"><p>Ability: <br>' + mArray[2] + '</p><p class="pWorlds">Worlds: <br>' + mArray[1] + '</p></div></div><div></div>');
+        $('.monsters').hide();
       }
     }
-  //  mNames.html(jQuery.type(mNames.html().split(/\n/)));
-  //  mNames.html(mArray.length)
+  })
+})
+//toggle monster collection showing more or less of them on the screen
+$(".moreOrLess").click(function(){
+  $(".monster div:nth-child(n+11)").toggle()
+})
+$(".hideOrShow").click(function(){
+  $("#mFilter").toggle();
+})
+//search option to easier find enemies wit specific traits
+$(".mSearch").on("keyup", function() {
+  var input = $(this).val().toLowerCase();
+    $(".monster > div").filter(function(){
+      $(this).toggle($(this).text().toLowerCase().indexOf(input) > -1)
+    });
+  });
+// filter monsters with checkboxes
+$(".form-check").find("input:checkbox").on('change', function(){
+
+  var checkedBoxes = $('.form-check').find("input:checkbox:checked");
+  var checkedVal = []
+  checkedBoxes.each(function(){
+    checkedVal.push($(this).val())
+  })
+  var y = new RegExp(checkedVal.join('|'))
+  $(".pWorlds").parent().parent().parent().show()
+  $(".pWorlds").each(function(){
+    var monster = $(this)
+  //  $(".pWorlds").parent().parent().parent().show()
+    console.log(monster == null)
+    if ($(this).text().match(y) == null) {
+
+      monster.parent().parent().parent().toggle()
+    }
   })
 })
 
