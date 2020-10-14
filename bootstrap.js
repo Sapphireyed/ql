@@ -33,35 +33,32 @@ jQuery(document).ready(function($){
 
  // slide in features
  $(window).on('load', function(){
-let i = 0;
-if (x.matches) {
-  let startMob = setInterval(slideFeatureMob, 800);
-} else {
-  let start = setInterval(slideFeature, 800);
-}
-   function slideFeature(){
-     let features = document.querySelectorAll(".features li");
-     if (i < features.length) {
-       features[i].classList.add('slideIn');
-       features[i].style.left = 0;
-       i++;
-     } else {
-       clearInterval(start)
-     }
+   var dateHere = new Date();
+   if (dateHere.getHours() > 9 && dateHere.getHours() < 21) {
+     $('.main').css('backgroundImage',"url('img/mainpic.png')")
+   } else {
+     $('.main').css('backgroundImage',"url('img/night.png')")
    }
-   function slideFeatureMob(){
-     let featuresMob = document.querySelectorAll(".features-mob li");
-     if (i < featuresMob.length) {
-       featuresMob[i].classList.add('slideIn');
-       featuresMob[i].style.left = 0;
-       i++;
-     } else {
-       clearInterval(startMob)
-     }
-   }
+   let features = document.querySelectorAll(".features li");
+
+      slideFeature();
+      let out = setInterval(slideOut, 4999);
+      let slideIn = setInterval(slideFeature, 5000)
 
 
+   function slideOut(){
+     for (var ind = 0; ind < features.length;ind++) {
+       features[ind].classList.remove('slideIn')
+     }
+   }
+   function slideFeature() {
+     let i = Math.floor(Math.random() * features.length);
+     features[i].classList.add('slideIn')
+   }
  });
+
+
+
  // popover responsive
  var width = $("#map").width();
  var height = $("#map").height();
@@ -332,9 +329,9 @@ $(".mSearch").on("keyup", function() {
     });
   });
 // filter monsters with checkboxes
-$(".form-check").find("input:checkbox").on('change', function(){
+$('#enemies').find("input:checkbox").on('change', function(){
 
-  var checkedBoxes = $('.form-check').find("input:checkbox:checked");
+  var checkedBoxes = $('.form-check-1').find("input:checkbox:checked");
   var checkedVal = []
   checkedBoxes.each(function(){
     checkedVal.push($(this).val())
@@ -343,13 +340,23 @@ $(".form-check").find("input:checkbox").on('change', function(){
   $(".pWorlds").parent().parent().parent().show()
   $(".pWorlds").each(function(){
     var monster = $(this)
-  //  $(".pWorlds").parent().parent().parent().show()
     console.log(monster == null)
     if ($(this).text().match(y) == null) {
 
       monster.parent().parent().parent().toggle()
     }
   })
+var boss = $('.mItem').find('.bg-danger').parent().parent()
+boss.each(function(){
+  if ($(this).is('visible')) {
+    boss = $(this)
+  }
 })
-
+  if ($(this).val() == 'boss') {
+    $(".mItem").not(boss).toggle()
+  } else if ($(this).val() == 'normal') {
+    boss.toggle()
+  }
+})
+console.log(boss)
  });

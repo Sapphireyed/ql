@@ -15,6 +15,9 @@ h1 {text-align:center}
 .navbar {
   border-bottom: 5px solid white;
 }
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255, 0.9);
+}
 .navbar li:hover {
   border-bottom: rgba(255,255,255,.5);
   color: white;
@@ -30,7 +33,7 @@ h1 {text-align:center}
 }
 .main-wrapper {overflow: hidden}
 .main {
-  background-image: url('img/sunset.png');
+  background-image:;
   background-size: cover;
   background-position: center;
   height: 820px;
@@ -46,22 +49,28 @@ h1 {text-align:center}
   transform: translate3d(-232px, 0, 0);
 }
 }
-.features {width: 50%}
+.features {width: 80%}
 .list-group-item {
   border-width: 0 0 0 !important;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
   text-shadow: 1px 1px white;
+  background-color: rgba(248,249,250, 0.5);
+  position:absolute;
+  top: 65%;
+  left:100px;
+  width:40%
 }
-.features li, .features-mob li{left:-5000px}
-.features li:hover {font-size: 1.4rem}
+
+.features li, .features-mob li{opacity:0}
 .slideIn {
   animation: slide;
-  animation-duration: 2s;
+  animation-duration: 4s;
+  animation-direction: alternate
 }
 @keyframes slide {
-  from {left: -5000px}
-  to {left: 0}
+  from {opacity: : 0}
+  to {opacity: 1}
 }
 /*img map choose hero */
 .popover {position:relative}
@@ -125,6 +134,7 @@ h1 {text-align:center}
 
 
 @media only screen and (max-width: 760px) {
+  .navbar-brand {margin-right:0 !important}
   /*main*/
   .main-wrapper {overflow: hidden}
   .main {
@@ -143,8 +153,12 @@ h1 {text-align:center}
     transform: translate3d(-1202px, 0, 0);
   }
 }
-  .features-mob {width: 80%}
-  .list-group-item {font-size: 1.2rem;}
+
+  .list-group-item {
+    width:100%;
+    left:0;
+    top:70%;
+  }
   /*map*/
   .popover {max-width: 50%}
   #zoommap {top:30%}

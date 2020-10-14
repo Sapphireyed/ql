@@ -27,14 +27,9 @@
       <span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse ml-5" id="collapsemenu">
       <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Content1</a>
-            <div class="dropdown-menu bg-dark">
-              <a class="dropdown-item" href="#">One</a>
-              <a class="dropdown-item" href="#">Two</a>
-            </div>
-        </li>
-        <li class="nav-item active"><a class="nav-link" href="#">Content2</a></li>
+        <li class="nav-item"><a class="nav-link" href="#worlds">Worlds</a></li>
+        <li class="nav-item"><a class="nav-link" href="#heroes">Heroes</a></li>
+        <li class="nav-item"><a class="nav-link" href="#mCollection">Monster Collection</a></li>
       </ul>
     </div>
     <a class='btn bg-secondary text-light btn-pill p-0 mr-3 mx-auto' id='dark'>Dark</a>
@@ -42,78 +37,54 @@
       <img src="logo.png" class="mr-5"
            alt="logo" width="130"></a>
 </nav>
-<section class='bg-dark py-3 main-wrapper'>
-<div class="container-fluid main" style="margin-top: 70px">
-  </div>
+
+<section class='bg-dark py-3 main-wrapper' id='wrapper-main'>
+<div class="container-fluid main" id='main' style="margin-top: 50px">
+</div>
 </section>
-<div class="d-lg-block d-none" style='position:absolute; top:80px'>
-  <ul class="list-group list-unstyled list-group-flush py-4 features text-black">
-    <li class="list-group-item bg-transparent">
+
+<img id='logo2' src="img/logo2.png" alt='logo' class="d-md-block d-none my-auto"
+     style='position: absolute; top: 100px; width: 600px; left:82px'>
+
+  <ul class="list-group list-unstyled list-group-flush features text-black">
+    <li class="list-group-item rounded-lg"  id='firstFeature'>
       <i class="fa fa-star text-warning"></i>
       Deck building adventure Card RPG game with a tactical map and roguelike elements</li>
-    <li class="list-group-item bg-transparent"><i class="fa fa-star text-warning"></i>
+    <li class="list-group-item rounded-lg">
+      <i class="fa fa-star text-warning"></i>
       Discover powerful synergies between cards</li>
-    <li class="list-group-item bg-transparent">
+    <li class="list-group-item rounded-lg">
       <i class="fa fa-star text-warning"></i>
       Roguelike procedural map system</li>
-    <li class="list-group-item bg-transparent">
+    <li class="list-group-item rounded-lg">
       <i class="fa fa-star text-warning"></i>
-      Slay the 60+ monsters with unique abilities</li>
-    <li class="list-group-item bg-transparent">
+      Slay 60+ monsters with unique abilities</li>
+    <li class="list-group-item rounded-lg">
       <i class="fa fa-star text-warning"></i>
       Discover 130+ cards for deck building</li>
-    <li class="list-group-item bg-transparent">
+    <li class="list-group-item rounded-lg">
       <i class="fa fa-star text-warning"></i>
-      Slay the over a dozen unqiue bosses in epic battles</li>
-    <li class="list-group-item bg-transparent">
+      Slay over a dozen unqiue bosses in epic battles</li>
+    <li class="list-group-item rounded-lg">
       <i class="fa fa-star text-warning"></i>
       Discover shops, shrines, observatories, smithies, sanctuaries and other unique locations</li>
-    <li class="list-group-item bg-transparent">
+    <li class="list-group-item rounded-lg">
       <i class="fa fa-star text-warning"></i>
       Slay the cruel titan lord and ascend to the next level</li>
-    <li class="list-group-item bg-transparent">
+    <li class="list-group-item rounded-lg">
       <i class="fa fa-star text-warning"></i>
       Play Offline</li>
   </ul>
-</div>
-<div class="d-lg-none mx-auto" style='position:absolute; top:60px'>
+  <a href='https://play.google.com/store/apps/details?id=games.roguelike.slaythetitan&hl=en'
+     style='position: absolute; top: 83%; width: 300px; left:100px' target='_blank'>
+    <img id='logo2' src="google.png" alt='logo' class="d-md-block d-none my-auto"></a>
+
+<div class="d-md-none mx-auto" style='position:absolute; top:50px'>
   <img id='logo2' src="img/logo2.png" alt='logo' class="mx-auto d-block mt-4" >
-  <ul class="list-group list-unstyled list-group-flush py-4 features-mob text-black">
-    <li class="list-group-item bg-transparent">
-      <i class="fa fa-star text-warning"></i>
-      Deck building adventure Card RPG game with a tactical map and roguelike elements</li>
-    <li class="list-group-item bg-transparent"><i class="fa fa-star text-warning"></i>
-      Discover powerful synergies between cards</li>
-    <li class="list-group-item bg-transparent">
-      <i class="fa fa-star text-warning"></i>
-      Roguelike procedural map system</li>
-    <li class="list-group-item bg-transparent">
-      <i class="fa fa-star text-warning"></i>
-      Slay the 60+ monsters with unique abilities</li>
-    <li class="list-group-item bg-transparent">
-      <i class="fa fa-star text-warning"></i>
-      Discover 130+ cards for deck building</li>
-    <li class="list-group-item bg-transparent">
-      <i class="fa fa-star text-warning"></i>
-      Slay the over a dozen unqiue bosses in epic battles</li>
-    <li class="list-group-item bg-transparent">
-      <i class="fa fa-star text-warning"></i>
-      Discover shops, shrines, observatories, smithies, sanctuaries and other unique locations</li>
-    <li class="list-group-item bg-transparent">
-      <i class="fa fa-star text-warning"></i>
-      Slay the cruel titan lord and ascend to the next level</li>
-    <li class="list-group-item bg-transparent">
-      <i class="fa fa-star text-warning"></i>
-      Play Offline</li>
-  </ul>
 </div>
+  <span style="color:transparent" id="worlds">x</span>
+<section class="container shadow mt-5" >
 
-
-<section class='container shadow rounded-lg' style="margin-top: 80px">
-  <h1 class="mx-auto text-secondary" style='font-variant: small-caps;'><strong>Welcome to </strong><img src="logo.png" width="230" style="max-width:100%;"></h1>
-</section>
-
-<section class="container shadow mt-3">
     <div class="row rounded-lg" style="background-color: #E6E6E6">
       <h2 class="col-12 text-light bg-secondary py-2 rounded-lg text-center explore">Explore unique worlds</h2>
         <div class="col-lg col-6 col-md-4 my-2 worldsav pb-2">
@@ -203,8 +174,8 @@
 
     </div>
 </section>
-
-<section class="container shadow" style="margin-top: 70px">
+<span style="color:transparent" id="heroes">x</span>
+<section class="container shadow" style="margin-top: 40px">
   <div class="row">
     <div class="col-lg-9 row">
       <div class='col 12 pt-3'>
@@ -769,16 +740,16 @@
 </div>
 </section>
 
-<section class='container shadow mt-3 mb-5' style="margin-top: 70px">
+<span style="color:transparent" id="mCollection">x</span>
+<section class='container shadow mb-5' style="margin-top: 40px">
   <div id='enemies'>
     <div style="background-color: #E6E6E6">
       <button class="btn btn-secondary btn-pill hideOrShow d-inline float-right">Filter</button>
       <h1 class='text-center text-light bg-secondary rounded-lg'>Fight dreadful monster</h1>
       <form id="mFilter" class="row mx-3">
         <input type="text" placeholder="Search.." title="Type in a name" class="float-right my-auto rounded d-md-none d-block mSearch">
-        <a type="submit" class="btn btn-secondary d-lg-block d-none mFilterBtn">Submit</a>
-        <div class="form-check col-lg">
-          <div class="row">
+        <div class="form-check form-check-1 col-lg">
+          <div class="row pb-3">
             <p class="text-center col-12 border-bottom border-secondary">Worlds: </p>
             <div class="col-md-6">
               <label class="form-check-label" for="MF">Mystic Forest</label>
@@ -798,14 +769,13 @@
             </div>
           </div>
         </div>
-        <div class="col-lg">
+        <div class="col-lg form-check form-check-2">
           <p class="text-center border-bottom border-secondary">Type: </p>
           <label class="form-check-label col-11" for="MF">Normal</label>
-          <input type="checkbox" class="form-check-input ml-1 col-1" id="normal" name="MF" value="">
+          <input type="checkbox" class="form-check-input ml-1 col-1" id="normal" name="normal" value="normal">
           <label class="form-check-label col-11 text-danger" for="MF">Boss</label>
-          <input type="checkbox" class="form-check-input ml-1 col-1" id="boss" name="MF" value="">
+          <input type="checkbox" class="form-check-input ml-1 col-1" id="boss" name="boss" value="boss">
         </div>
-        <a type="submit" class="btn btn-secondary d-lg-none d-block mx-auto mFilterBtn">Submit</a>
         <div class="col-lg my-auto">
           <input type="text" placeholder="Search.." title="Type in a name" class="float-right my-auto rounded d-none d-md-block mSearch">
           <br><br class="d-none d-md-block">
@@ -813,7 +783,7 @@
         </div>
       </form>
     </div>
-    <div class='mx-auto monster row'>
+    <div class='mx-auto monster row mt-1'>
       <h4 class='text-center col-12 monsters'>MONSTERS</h4>
     </div>
   </div>
