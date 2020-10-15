@@ -29,12 +29,12 @@
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="#worlds">Worlds</a></li>
         <li class="nav-item"><a class="nav-link" href="#heroes">Heroes</a></li>
-        <li class="nav-item"><a class="nav-link" href="#mCollection">Monster Collection</a></li>
+        <li class="nav-item"><a class="nav-link" id='mCollectionLink' href="#mCollection">Monster Collection</a></li>
       </ul>
     </div>
-    <a class='btn bg-secondary text-light btn-pill p-0 mr-3 mx-auto' id='dark'>Dark</a>
-    <a class="navbar-brand mr-5 offset-col-md-3" href="#" >
-      <img src="logo.png" class="mr-5"
+  <!--  <a class='btn bg-secondary text-light btn-pill p-0 mr-3 mx-auto' id='dark'>Dark</a> -->
+    <a class="navbar-brand" href="#" >
+      <img src="logo.png" class=""
            alt="logo" width="130"></a>
 </nav>
 
@@ -43,13 +43,13 @@
 </div>
 </section>
 
-<img id='logo2' src="img/logo2.png" alt='logo' class="d-md-block d-none my-auto"
-     style='position: absolute; top: 100px; width: 600px; left:82px'>
+<img id='logo' src="logo.png" alt='logo' class="d-md-block d-none my-auto"
+     style='position: absolute; top: 100px; width: 600px; left:42px'>
 
   <ul class="list-group list-unstyled list-group-flush features text-black">
     <li class="list-group-item rounded-lg"  id='firstFeature'>
       <i class="fa fa-star text-warning"></i>
-      Deck building adventure Card RPG game with a tactical map and roguelike elements</li>
+      Deck building adventure Card RPG game with roguelike elements</li>
     <li class="list-group-item rounded-lg">
       <i class="fa fa-star text-warning"></i>
       Discover powerful synergies between cards</li>
@@ -67,7 +67,7 @@
       Slay over a dozen unqiue bosses in epic battles</li>
     <li class="list-group-item rounded-lg">
       <i class="fa fa-star text-warning"></i>
-      Discover shops, shrines, observatories, smithies, sanctuaries and other unique locations</li>
+      Discover shops, shrines, observatories and other unique locations</li>
     <li class="list-group-item rounded-lg">
       <i class="fa fa-star text-warning"></i>
       Slay the cruel titan lord and ascend to the next level</li>
@@ -76,15 +76,22 @@
       Play Offline</li>
   </ul>
   <a href='https://play.google.com/store/apps/details?id=games.roguelike.slaythetitan&hl=en'
-     style='position: absolute; top: 83%; width: 300px; left:100px' target='_blank'>
-    <img id='logo2' src="google.png" alt='logo' class="d-md-block d-none my-auto"></a>
+     style='position: absolute; top: 86%; width: 300px; left:60px' target='_blank'>
+    <img id='Google Play' src="google.png" alt='logo' class="d-md-block d-none my-auto shadow"></a>
+    <a href='https://play.google.com/store/apps/details?id=games.roguelike.slaythetitan&hl=en'
+       style='position: absolute; top: 86%; width: 300px; left:360px' target='_blank'>
+      <img id='iscord' src="discord.png" alt='logo' class="d-md-block d-none my-auto shadow"></a>
 
 <div class="d-md-none mx-auto" style='position:absolute; top:50px'>
-  <img id='logo2' src="img/logo2.png" alt='logo' class="mx-auto d-block mt-4" >
+  <img id='logo2' src="logo.png" alt='logo' class="mx-auto d-block mt-4" >
 </div>
 <a href='https://play.google.com/store/apps/details?id=games.roguelike.slaythetitan&hl=en'
-   style='position: absolute; top: 90%; width: 200px;' target='_blank'>
-  <img id='logo2' src="google.png" alt='logo' class="d-md-none my-auto mx-auto d-block"></a>
+   style='position: absolute; top: 82%; width: 100%;' target='_blank'>
+  <img id='Google Play' src="google.png" alt='logo' class="d-md-none my-auto mx-auto d-block"></a>
+  <a href='https://play.google.com/store/apps/details?id=games.roguelike.slaythetitan&hl=en'
+     style='position: absolute; top: 91%; width: 100%;' target='_blank'>
+    <img id='Google Play' src="discord.png" alt='logo' class="d-md-none my-auto mx-auto d-block"></a>
+
   <span style="color:transparent" id="worlds">x</span>
 <section class="container shadow mt-5" >
 
@@ -96,27 +103,27 @@
           <img src='img/map.png' class='worldmap'>
         </div>
         <div class="col-lg col-6 col-md-4 my-2 worldsav">
-          <img src="img/worlds/FROZEN_LANDS.png" alt='Mystic Forest' class='rounded'>
+          <img src="img/worlds/FROZEN_LANDS.png" alt='Frozen Lands' class='rounded'>
           <h6 class="text-light">Frozen Lands</h6>
           <img src='img/frozen.png' class='worldmap'>
         </div>
         <div class="col-lg col-6 col-md-4 my-2 worldsav">
-          <img src="img/worlds/PLAINS.png" alt='Mystic Forest' class='rounded'>
+          <img src="img/worlds/PLAINS.png" alt='Great Plains' class='rounded'>
           <h6 class="text-light">Great Plains</h6>
           <img src='img/map.png' class='worldmap'>
         </div>
         <div class="col-lg col-6 col-md-4 my-2 worldsav">
-          <img src="img/worlds/LAVA_CAVE.png" alt='Mystic Forest' class='rounded'>
+          <img src="img/worlds/LAVA_CAVE.png" alt='Lava Caves' class='rounded'>
           <h6 class="text-light" style='left:50%'>Lava<br>Caves</h6>
           <img src='img/map.png' class='worldmap'>
         </div>
         <div class="col-lg col-6 col-md-4 my-2 worldsav">
-          <img src="img/worlds/DESERT.png" alt='Mystic Forest' class='rounded'>
+          <img src="img/worlds/DESERT.png" alt='Cruel Desert' class='rounded'>
           <h6 class="text-light">Cruel Desert</h6>
           <img src='img/map.png' class='worldmap'>
         </div>
         <div class="col-lg col-6 col-md-4 my-2 worldsav">
-          <img src="img/worlds/POISONED_LANDS.png" alt='Mystic Forest' class='rounded'>
+          <img src="img/worlds/POISONED_LANDS.png" alt='Toxic Lands' class='rounded'>
           <h6 class="text-light">Toxic Lands</h6>
           <img src='img/map.png' class='worldmap'>
         </div>
@@ -757,18 +764,18 @@
             <div class="col-md-6">
               <label class="form-check-label" for="MF">Mystic Forest</label>
               <input type="checkbox" class="form-check-input ml-1" id="MF" name="Mystic Forest" value="Mystic Forest"><br>
-              <label class="form-check-label" for="MF">Frozan Lands</label>
-              <input type="checkbox" class="form-check-input ml-1" id="FL" name="Frozan Lands" value="Frozan Lands"><br>
+              <label class="form-check-label" for="MF">Frozen Lands</label>
+              <input type="checkbox" class="form-check-input ml-1" id="FL" name="Frozen Lands" value="Frozen Lands"><br>
               <label class="form-check-label" for="MF">Great Plains</label>
               <input type="checkbox" class="form-check-input ml-1" id="GP" name="GP" value="Great Plains"><br>
             </div>
             <div class="col-md-6">
-              <label class="form-check-label" for="MF">Mystic Forest</label>
-              <input type="checkbox" class="form-check-input ml-1" id="LC" name="MF" value=""><br>
-              <label class="form-check-label" for="MF">Mystic Forest</label>
-              <input type="checkbox" class="form-check-input ml-1" id="CD" name="MF" value=""><br>
-              <label class="form-check-label" for="MF">Mystic Forest</label>
-              <input type="checkbox" class="form-check-input ml-1" id="TL" name="MF" value=""><br>
+              <label class="form-check-label" for="LC">Lava Caves</label>
+              <input type="checkbox" class="form-check-input ml-1" id="LC" name="LC" value="Lava Caves"><br>
+              <label class="form-check-label" for="MF">Cruel Desert</label>
+              <input type="checkbox" class="form-check-input ml-1" id="CD" name="CD" value="Cruel Desert"><br>
+              <label class="form-check-label" for="MF">Toxic Lands</label>
+              <input type="checkbox" class="form-check-input ml-1" id="TL" name="TL" value="Toxic Lands"><br>
             </div>
           </div>
         </div>

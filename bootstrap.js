@@ -22,20 +22,22 @@ jQuery(document).ready(function($){
     $('body').children().find('.text-white').removeClass('text-white').addClass('text-secondary');
     light= true;
   }
- document.getElementById('dark').onclick = function() {
-  if (light) {
-    dark();
-  } else {
-    lightMode();
-  }
-};
+ //document.getElementById('dark').onclick = function() {
+//  if (light) {
+//    dark();
+//  } else {
+//    lightMode();
+//  }
+//};
 
 
  // slide in features
  $(window).on('load', function(){
    var dateHere = new Date();
-   if (dateHere.getHours() > 9 && dateHere.getHours() < 21) {
+   if (dateHere.getHours() > 7 && dateHere.getHours() < 16) {
      $('.main').css('backgroundImage',"url('img/mainpic.png')")
+   } else if(dateHere.getHours() > 15 && dateHere.getHours() < 20) {
+     $('.main').css('backgroundImage',"url('img/sunset.png')")
    } else {
      $('.main').css('backgroundImage',"url('img/night.png')")
    }
@@ -97,12 +99,25 @@ $('.area').hover(function(){
   })
 
   //choose world map
-  $('.worldsav').each(function(){
+  $('.worldsav img').each(function(){
+    console.log(this.getAttribute('src'))
     $(this).on('click', function(){
+      var world = this.getAttribute('alt')
+      console.log(world)
+      console.log(this.getAttribute('alt'))
       $('.exactdiv-worlds img').remove()
-      $(this).find('.worldmap').show();
-      $(this).find('.worldmap').clone().appendTo('#ex1');
-      $(this).find('.worldmap').hide()
+      $(this).parent().find('.worldmap').show();
+      $(this).parent().find('.worldmap').clone().appendTo('#ex1');
+      $(this).parent().find('.worldmap').hide()
+      document.getElementById("mCollectionLink").click()
+      $('.form-check-1').find("input:checkbox").each(function(){
+        if ($(this).val() == world) {
+          $('#enemies').find("input:checkbox").not($(this)).prop('checked', false)
+          $(this).prop('checked', true)
+          $('#enemies').find("input:checkbox").change()
+          console.log($(this).val() == world)
+        }
+      })
     })
   })
   //choose hero
@@ -329,34 +344,35 @@ $(".mSearch").on("keyup", function() {
     });
   });
 // filter monsters with checkboxes
-$('#enemies').find("input:checkbox").on('change', function(){
+function checkbox() {
 
   var checkedBoxes = $('.form-check-1').find("input:checkbox:checked");
-  var checkedVal = []
+  var checkedVal = ['All']
+  var enemyType = $('.form-check-2').find("input:checkbox:checked")
   checkedBoxes.each(function(){
     checkedVal.push($(this).val())
   })
   var y = new RegExp(checkedVal.join('|'))
-  $(".pWorlds").parent().parent().parent().show()
+  $(".mItem").removeClass('d-none')
   $(".pWorlds").each(function(){
-    var monster = $(this)
-    console.log(monster == null)
-    if ($(this).text().match(y) == null) {
-
-      monster.parent().parent().parent().toggle()
+    var monster = $(this).parent().parent().parent()
+    console.log(checkedVal)
+    if ($(this).text().match(y) == null && checkedVal.length !== 1) {
+      monster.parent().addClass('d-none')
+    //  monster.toggle()
+    } else if ($(this).text().match(y) == null && checkedVal.length == 1) {
+      monster.show()
     }
   })
 var boss = $('.mItem').find('.bg-danger').parent().parent()
-boss.each(function(){
-  if ($(this).is('visible')) {
-    boss = $(this)
+$('.mItem').each(function(){
+  if ($(this).css('display') !== 'none' && enemyType.val()=='boss') {
+    console.log($(this).css('display') !== 'none')
+    $(".mItem").not(boss).addClass('d-none')
+  } else if (($(this).css('display') !== 'none' && enemyType.val()=='normal')) {
+    boss.addClass('d-none')
   }
 })
-  if ($(this).val() == 'boss') {
-    $(".mItem").not(boss).toggle()
-  } else if ($(this).val() == 'normal') {
-    boss.toggle()
-  }
-})
-console.log(boss)
+}
+$('#enemies').find("input:checkbox").on('change', checkbox)
  });

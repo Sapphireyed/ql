@@ -52,14 +52,14 @@ h1 {text-align:center}
 .features {width: 80%}
 .list-group-item {
   border-width: 0 0 0 !important;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: bold;
   text-shadow: 1px 1px white;
   background-color: rgba(248,249,250, 0.5);
   position:absolute;
-  top: 65%;
-  left:100px;
-  width:40%
+  bottom: 16%;
+  left:60px;
+  width:39%
 }
 
 .features li, .features-mob li{opacity:0}
@@ -134,7 +134,7 @@ h1 {text-align:center}
 
 
 @media only screen and (max-width: 760px) {
-  .navbar-brand {margin-right:0 !important}
+  .navbar-brand {margin-right:0 }
   /*main*/
   .main-wrapper {overflow: hidden}
   .main {
@@ -157,7 +157,8 @@ h1 {text-align:center}
   .list-group-item {
     width:100%;
     left:0;
-    top:70%;
+    bottom:20%;
+    font-size: 1.3rem;
   }
   /*map*/
   .popover {max-width: 50%}
