@@ -78,7 +78,7 @@
   <a href='https://play.google.com/store/apps/details?id=games.roguelike.slaythetitan&hl=en'
      style='position: absolute; top: 86%; width: 300px; left:60px' target='_blank'>
     <img id='Google Play' src="google.png" alt='logo' class="d-md-block d-none my-auto shadow"></a>
-    <a href='https://play.google.com/store/apps/details?id=games.roguelike.slaythetitan&hl=en'
+    <a href='https://tiny.cc/QL-discord'
        style='position: absolute; top: 86%; width: 300px; left:360px' target='_blank'>
       <img id='iscord' src="discord.png" alt='logo' class="d-md-block d-none my-auto shadow"></a>
 
@@ -88,9 +88,583 @@
 <a href='https://play.google.com/store/apps/details?id=games.roguelike.slaythetitan&hl=en'
    style='position: absolute; top: 82%; width: 100%;' target='_blank'>
   <img id='Google Play' src="google.png" alt='logo' class="d-md-none my-auto mx-auto d-block"></a>
-  <a href='https://play.google.com/store/apps/details?id=games.roguelike.slaythetitan&hl=en'
+  <a href='https://tiny.cc/QL-discord'
      style='position: absolute; top: 91%; width: 100%;' target='_blank'>
     <img id='Google Play' src="discord.png" alt='logo' class="d-md-none my-auto mx-auto d-block"></a>
+
+    <span style="color:transparent" id="heroes">x</span>
+    <section class="container shadow" style="margin-top: 40px">
+      <div class="row">
+        <div class="col-lg-9 row">
+          <div class='col 12 pt-3'>
+            <h2 class="text-center text-light bg-secondary rounded-lg py-2">Become a legendary Hero</h2>
+          </div>
+          <div class='exactdiv'></div>
+          <button type="button" class="btn text-secondary border rounded" id="next"><b> > </b></button>
+          <button type="button" class="btn text-secondary border rounded" id="prev"><b> < </b></button>
+        </div>
+
+
+        <div class="col-lg-3 heroes py-3 rounded-lg" style="background-color: #E6E6E6">
+          <h2 class="text-light bg-secondary py-2 rounded-lg text-center">Choose your hero</h2>
+          <div class="row row-cols-2 row-cols-md-4 row-cols-lg-2 pt-3 pb-5">
+
+            <div class="col heroesav">
+              <img class="mx-auto d-block" src="img/heros/HeroPortraits/KNIGHT.png" alt="knight" id="knightav">
+              <h4 class="mx-auto" id-'heroName'>Knight</h4>
+              <div class="heroesdesc mx-auto" id="knightdesc">
+                <div class="row">
+                  <div class="col-md-4 mt-2 mx-auto my-auto">
+                    <img class="" src="img/heros/knight1.png" alt="knight" id="knight">
+                  </div>
+                  <div class="col-md text-center pr-md-5">
+                    <h1 class="text-secondary mx-auto mb-n3 pt-2">Knight</h1>
+                    <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
+                      <p class="px-3 py-2"><i>As a skilled fighter, the knight knows when to attack and when to defend</i></p>
+                    </div>
+                    <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
+                      <p class="pl-3">None</p>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
+                      <div class="col-md card pt-2 mt-1">
+                        <h6><b>Arrow Rain</b></h6>
+                        <p><i>When activated: Inflict 10 <span class='text-secondary'>physical</span> damage to an enemy</i></p>
+                      </div>
+                      <div class="col-md card pt-2 mt-1">
+                        <h6><b>Disarm</b></h6>
+                        <p><i>When activated: Opponent exiles any equipped gear and prayer</i></p>
+                      </div>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
+                      <div class="col-md card pt-2 mt-1">
+                        <h6><b>Offensive Stance</b></h6>
+                        <p><i>When activated: Get an extra turn</i></p>
+                      </div>
+                      <div class="col-md card pt-2 mt-1">
+                        <h6><b>Defensive Stance</b></h6>
+                        <p><i>When activated: Double your current Block</i></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row px-4 py-3 deck">
+                  <div class='col-1  mx-auto d-none d-lg-block'>
+                    <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
+                  </div>
+                  <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
+                    <h5 class='text-center text-light my-1'>Deck</h5>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/Strike.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/Strike1.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 2</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/Defend.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/heavyStrike.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 1</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col heroesav">
+              <img class="mx-auto d-block" src="img/heros/HeroPortraits/ELEMENTALIST.png" alt="elementalist" id="elemav">
+              <h4 class="mx-auto" id-'heroName'>Elementalist</h4>
+              <div class="heroesdesc mx-auto" id="elemdesc">
+                <div class="row">
+                  <div class="col-md-4 mt-2 mx-auto my-auto">
+                    <img class="" src="img/heros/elem1.png" alt="elementalist" id="elem">
+                  </div>
+                  <div class="col-md text-center pr-md-5">
+                    <h1 class="text-secondary mx-auto mb-n3 pt-2">Elementalist</h1>
+                    <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
+                      <p class="px-3 py-2"><i>Well studied in the art of elemental magic, thismagecan use powerful spells to destroy his enemies</i></p>
+                    </div>
+                    <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
+                      <p class="pl-3">Retain cards on hand between runds. Discard by dragging on Discard Pile</p>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Mana Fountain</b></h6>
+                        <p><i>When activated: Gain 10 mana</i></p>
+                      </div>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Fireblast</b></h6>
+                        <p><i>When activated: Inflict 10 <span style='color:red'>fire</span> damage</i></p>
+                      </div>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Expose</b></h6>
+                        <p><i>When activated: enemy becomes vulnurable to elemental damage for this turn</i></p>
+                      </div>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Protectum</b></h6>
+                        <p><i>When activated: Protect all damage until your next turn</i></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row px-4 py-3 deck">
+                  <div class='col-1  mx-auto d-none d-lg-block'>
+                    <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
+                  </div>
+                  <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
+                    <h5 class='text-center text-light my-1'>Deck</h5>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/Strike.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/Strike1.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 2</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/mana.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/elementalBolt.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 2</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col heroesav">
+              <img class="mx-auto d-block" src="img/heros/HeroPortraits/ROGUE.png" alt="rogue" id="rogueav">
+              <h4 class="mx-auto" id-'heroName'>Rogue</h4>
+              <div class="heroesdesc mx-auto" id="roguedesc">
+                <div class="row">
+                  <div class="col-md-4 mt-2 mx-auto my-auto">
+                    <img class="" src="img/heros/rogue1.png" alt="rogue" id="rogue">
+                  </div>
+                  <div class="col-md text-center pr-md-5">
+                    <h1 class="text-secondary mx-auto mb-n3 pt-2">Rogue</h1>
+                    <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
+                      <p class="px-3 py-2"><i>A stealthy and agile fighter, relying on combining and stacking up his skills to best the enemy</i></p>
+                    </div>
+                    <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
+                      <p class="pl-3">Sneak up on enemies from behind to get an adventage in combat</p>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Agility</b></h6>
+                        <p><i>When activated: Draw 3 cards. Gain 3 actions</i></p>
+                      </div>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Make bank</b></h6>
+                        <p><i>When activated: Double the coin reward for this foe</i></p>
+                      </div>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Steal</b></h6>
+                        <p><i>When activated: Pick a card from opponent draw pile and put it in your hand for this fight.</i></p>
+                      </div>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Avoid</b></h6>
+                        <p><i>When activated: Prevent all damage until your next turn</i></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row px-4 py-3 deck">
+                  <div class='col-1  mx-auto d-none d-lg-block'>
+                    <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
+                  </div>
+                  <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
+                    <h5 class='text-center text-light my-1'>Deck</h5>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/Strike.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 6</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/Strike1.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 3</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/backstab.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 1</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/Slice.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 2</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col heroesav">
+              <img class="mx-auto d-block" src="img/heros/HeroPortraits/BARBARIAN.png" alt="barbarian" id="barbarianav">
+              <h4 class="mx-auto" id-'heroName'>Barbarian</h4>
+              <div class="heroesdesc mx-auto" id="knightdesc">
+                <div class="row">
+                  <div class="col-md-4 mt-2 mx-auto my-auto">
+                    <img class="" src="img/heros/barb1.png" alt="barbarian" id="barbarian">
+                  </div>
+                  <div class="col-md text-center pr-md-5">
+                    <h1 class="text-secondary mx-auto mb-n3 pt-2">Barbarian</h1>
+                    <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
+                      <p class="px-3 py-2"><i>A fierce warrior from the northen lands. Relies on his blunt strength and rage which at times makes him lose control.</i></p>
+                    </div>
+                    <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
+                      <p class="pl-3">Rage makes you more powerful, but might hurt yourself</p>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Fury</b></h6>
+                        <p><i>When activated: Double your rage</i></p>
+                      </div>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Relax</b></h6>
+                        <p><i>When activated: Lose all rage</i></p>
+                      </div>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Bulk Up</b></h6>
+                        <p><i>When activated: All your physical sources deal 2 extra damage this fight</i></p>
+                      </div>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Double Strike</b></h6>
+                        <p><i>When activated: Create a temporary copy of the next card you play</i></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row px-4 py-3 deck">
+                  <div class='col-1  mx-auto d-none d-lg-block'>
+                    <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
+                  </div>
+                  <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
+                    <h5 class='text-center text-light my-1'>Deck</h5>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/pound.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 8</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/pound1.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/breath.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 3</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/outburst.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 1</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col heroesav">
+              <img class="mx-auto d-block" src="img/heros/HeroPortraits/CLERIC.png" alt="cleric" id="cleric">
+              <h4 class="mx-auto" id-'heroName'>Cleric</h4>
+              <div class="heroesdesc mx-auto" id="clericdesc">
+                <div class="row">
+                  <div class="col-md-4 mt-2 mx-auto my-auto">
+                    <img class="" src="img/heros/cleric1.png" alt="cleric" id="cleric">
+                  </div>
+                  <div class="col-md text-center pr-md-5">
+                    <h1 class="text-secondary mx-auto mb-n3 pt-2">Cleric</h1>
+                    <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
+                      <p class="px-3 py-2"><i>A pious servant of the gods. Drawn to battle only to protect innocent, the cleric uses powrful prayers to strike down  heretics and monstersalike</i></p>
+                    </div>
+                    <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
+                      <p class="pl-3">Successful Prayers increase your Faith permanently by the time you did pray. Something good happens at every power of 2</p>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Bloodletting</b></h6>
+                        <p><i>When activated: Sacrifice 5 health to draw one card and gain 1 action. No cooldown</i></p>
+                      </div>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Piercing Light</b></h6>
+                        <p><i>When activated: Inflict 8 damage</i></p>
+                      </div>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Purify</b></h6>
+                        <p><i>When activated: Exile 3 unwanted cards from your hand for this fight.</i></p>
+                      </div>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Heal</b></h6>
+                        <p><i>When Activated: Heal completly</i></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row px-4 py-3 deck">
+                  <div class='col-1  mx-auto d-none d-lg-block'>
+                    <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
+                  </div>
+                  <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
+                    <h5 class='text-center text-light my-1'>Deck</h5>
+                  </div>
+                  <div class='col-md col-6 mx-auto'>
+                    <img src="img/cards/Strike.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 6</p>
+                  </div>
+                  <div class='col-md col-6 mx-auto'>
+                    <img src="img/cards/Strike1.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 2</p>
+                  </div>
+                  <div class='col-md col-6 mx-auto'>
+                    <img src="img/cards/mana.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 2</p>
+                  </div>
+                  <div class='col-md col-6 mx-auto'>
+                    <img src="img/cards/pray.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 1</p>
+                  </div>
+                  <div class='col-md col-6 mx-auto'>
+                    <img src="img/cards/healing.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 1</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col heroesav">
+              <img class="mx-auto d-block" src="img/heros/HeroPortraits/HUNTSMAN.png" alt="huntsman" id="huntsmanav">
+              <h4 class="mx-auto" id-'heroName'>Huntsman</h4>
+              <div class="heroesdesc mx-auto" id='huntsmndesc'>
+                <div class="row">
+                  <div class="col-md-4 mt-2 mx-auto my-auto">
+                    <img class="" src="img/heros/hunter1.png" alt="huntsman" id="huntsman">
+                  </div>
+                  <div class="col-md text-center pr-md-5">
+                    <h1 class="text-secondary mx-auto mb-n3 pt-2">Huntsman</h1>
+                    <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
+                      <p class="px-3 py-2"><i>At home in the wilderness, the huntsman is a skilled archer and tracker. Brings a loyal companion to help in battle.</i></p>
+                    </div>
+                    <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
+                      <p class="pl-3">Draws arrows every turn. Senses ambushes. Draws special cards from his canine friend.</p>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Dog Training</b></h6>
+                        <p><i>When activated: Spend all current actions to raise your dog's loyalty accordingly</i></p>
+                      </div>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Critical Hit</b></h6>
+                        <p><i>When activated: Next time you deal damage it's doubled and piercing</i></p>
+                      </div>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Lay trap</b></h6>
+                        <p><i>When activated: Put 5 temporary attack trap cards in your hand</i></p>
+                      </div>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Advanced Archery</b></h6>
+                        <p><i>When activated: Receive unmissing <span style='color:green'>poison</span> / <span style='color:red'>fire</span> / <span style='color:blue'>frost</span> arrows for the rest of the fight</i></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row px-4 py-3 deck">
+                  <div class='col-1  mx-auto d-none d-lg-block'>
+                    <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
+                  </div>
+                  <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
+                    <h5 class='text-center text-light my-1'>Deck</h5>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/Strike.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 6</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/Strike1.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 3</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/Slice.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 2</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/doggo.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 1</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col heroesav">
+              <img class="mx-auto d-block" src="img/heros/HeroPortraits/WITCHER.png" alt="witcher" id="witcherav">
+              <h4 class="mx-auto" id-'heroName'>Witcher</h4>
+              <div class="heroesdesc mx-auto" id="witcherdesc">
+                <div class="row">
+                  <div class="col-md-4 mt-2 mx-auto my-auto">
+                    <img class="" src="img/heros/witcher1.png" alt="knight" id="witcher">
+                  </div>
+                  <div class="col-md text-center pr-md-5">
+                    <h1 class="text-secondary mx-auto mb-n3 pt-2">Witcher</h1>
+                    <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
+                      <p class="px-3 py-2"><i>A heretic wizard turned warrior. No longer bound by the orders of the guild, he unlocks previously forbidden wys to channel magic.</i></p>
+                    </div>
+                    <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
+                      <p class="pl-3">None</p>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Mana Blast</b></h6>
+                        <p><i>When activated: Turn all mana into <span style="color: purple">demonic</span> damage.</i></p>
+                      </div>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Mana Mending</b></h6>
+                        <p><i>When activated: Turn all mana into healing. Overhealing becomes a shield.</i></p>
+                      </div>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Dark Sacrifice</b></h6>
+                        <p><i>When activated: Kill any non-boss foe immediately. Earn no XP and coin.</i></p>
+                      </div>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Summon Void</b></h6>
+                        <p><i>When activated: For the rest of the fight the first card opponent plays each turn is voided</i></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row px-4 py-3 deck">
+                  <div class='col-1  mx-auto d-none d-lg-block'>
+                    <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
+                  </div>
+                  <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
+                    <h5 class='text-center text-light my-1'>Deck</h5>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/Strike.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 7</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/Strike1.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 2</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/wizardryStrike.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 2</p>
+                  </div>
+                  <div class='col-md-2 col-6 mx-auto'>
+                    <img src="img/cards/makeHaste.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 1</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col heroesav">
+              <img class="mx-auto d-block" src="img/heros/HeroPortraits/SHAMAN.png" alt="knight" id="shamandesc">
+              <h4 class="mx-auto" id-'heroName'>Shaman</h4>
+              <div class="heroesdesc mx-auto" id="shamandesc">
+                <div class="row">
+                  <div class="col-md-4 mt-2 mx-auto my-auto">
+                    <img class="" src="img/heros/shaman1.png" alt="shaman" id="shaman">
+                  </div>
+                  <div class="col-md text-center pr-md-5">
+                    <h1 class="text-secondary mx-auto mb-n3 pt-2">Shaman</h1>
+                    <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
+                      <p class="px-3 py-2"><i>Raised by savage tribes, the Shaman is in touch with the spirits roaming this world and able to conjure their powers.</i></p>
+                    </div>
+                    <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
+                      <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
+                      <p class="pl-3">None</p>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Shock Totem</b></h6>
+                        <p><i>When activated: Equip a Shock Totem. Deals increasing <span style="color: yellow">air</span> damage.</i></p>
+                      </div>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Haste Totem</b></h6>
+                        <p><i>When activated: Equip a Haste Totem. Gain increasing number of action andcards.</i></p>
+                      </div>
+                    </div>
+                    <div class="row px-3 mt-4 abilities">
+                      <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Flame Totem</b></h6>
+                        <p><i>When activated: Equip a Flame Totem. Deals increasing <span style="color:red">fire</span> damage.</i></p>
+                      </div>
+                      <div class="col card pt-2 mt-1">
+                        <h6><b>Frost Totem</b></h6>
+                        <p><i>When activated: Equip a Frost Totem. Deals increasing <span style="color:blue">frost</span> damage.</i></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row px-4 py-3 deck">
+                  <div class='col-1  mx-auto d-none d-lg-block'>
+                    <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
+                  </div>
+                  <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
+                    <h5 class='text-center text-light my-1'>Deck</h5>
+                  </div>
+                  <div class='col-md col-6 mx-auto'>
+                    <img src="img/cards/Strike.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 7</p>
+                  </div>
+                  <div class='col-md col-6 mx-auto'>
+                    <img src="img/cards/Strike1.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 3</p>
+                  </div>
+                  <div class='col-md col-6 mx-auto'>
+                    <img src="img/cards/totem.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 1</p>
+                  </div>
+                  <div class='col-md col-6 mx-auto'>
+                    <img src="img/cards/shock.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 1</p>
+                  </div>
+                  <div class='col-md col-6 mx-auto'>
+                    <img src="img/cards/Healing.png">
+                    <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 1</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    </section>
 
   <span style="color:transparent" id="worlds">x</span>
 <section class="container shadow mt-5" >
@@ -183,571 +757,6 @@
     </div>
 
     </div>
-</section>
-<span style="color:transparent" id="heroes">x</span>
-<section class="container shadow" style="margin-top: 40px">
-  <div class="row">
-    <div class="col-lg-9 row">
-      <div class='col 12 pt-3'>
-        <h2 class="text-center text-light bg-secondary rounded-lg py-2">Become a legendary Hero</h2>
-      </div>
-      <div class='exactdiv'></div>
-      <button type="button" class="btn text-secondary border rounded" id="next"><b> > </b></button>
-      <button type="button" class="btn text-secondary border rounded" id="prev"><b> < </b></button>
-    </div>
-
-
-    <div class="col-lg-3 heroes py-3 rounded-lg" style="background-color: #E6E6E6">
-      <h2 class="text-light bg-secondary py-2 rounded-lg text-center">Choose your hero</h2>
-      <div class="row row-cols-2 row-cols-md-4 row-cols-lg-2 pt-3 pb-5">
-
-        <div class="col heroesav">
-          <img class="mx-auto d-block" src="img/heros/HeroPortraits/KNIGHT.png" alt="knight" id="knightav">
-          <h4 class="mx-auto" id-'heroName'>Knight</h4>
-          <div class="heroesdesc mx-auto" id="knightdesc">
-            <div class="row">
-              <div class="col-md-4 mt-2 mx-auto my-auto">
-                <img class="" src="img/heros/knight1.png" alt="knight" id="knight">
-              </div>
-              <div class="col-md text-center pr-md-5">
-                <h1 class="text-secondary mx-auto mb-n3 pt-2">Knight</h1>
-                <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
-                  <p class="px-3 py-2"><i>As a skilled fighter, the knight knows when to attack and when to defend</i></p>
-                </div>
-                <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
-                  <p class="pl-3">None</p>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
-                  <div class="col-md card pt-2 mt-1">
-                    <h6 class="border-bottom border-secondary w-50 mx-auto">Arrow Rain</h6>
-                    <p><i>When activated: Inflict 10 damage to an enemy</i></p>
-                  </div>
-                  <div class="col-md card pt-2 mt-1">
-                    <h6 class="border-bottom border-secondary w-45 mx-auto">Disarm</h6>
-                    <p><i>When activated: Opponent exiles any equipped gear and prayer</i></p>
-                  </div>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
-                  <div class="col-md card pt-2 mt-1">
-                    <h6 class="border-bottom border-secondary w-65 mx-auto">Offensive Stance</h6>
-                    <p><i>When activated: Get an extra turn</i></p>
-                  </div>
-                  <div class="col-md card pt-2 mt-1">
-                    <h6 class="border-bottom border-secondary w-65 mx-auto">Defensive Stance</h6>
-                    <p><i>When activated: Double your current Block</i></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row px-4 py-3 deck">
-              <div class='col-1  mx-auto d-none d-lg-block'>
-                <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
-              </div>
-              <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
-                <h5 class='text-center text-light my-1'>Deck</h5>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col heroesav">
-          <img class="mx-auto d-block" src="img/heros/HeroPortraits/ELEMENTALIST.png" alt="elementalist" id="elemav">
-          <h4 class="mx-auto" id-'heroName'>Elementalist</h4>
-          <div class="heroesdesc mx-auto" id="elemdesc">
-            <div class="row">
-              <div class="col-md-4 mt-2 mx-auto my-auto">
-                <img class="" src="img/heros/elem1.png" alt="elementalist" id="elem">
-              </div>
-              <div class="col-md text-center pr-md-5">
-                <h1 class="text-secondary mx-auto mb-n3 pt-2">Elementalist</h1>
-                <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
-                  <p class="px-3 py-2"><i>As a skilled fighter, the knight knows when to attack and when to defend</i></p>
-                </div>
-                <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
-                  <p class="pl-3">None</p>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row px-4 py-3 deck">
-              <div class='col-1  mx-auto d-none d-lg-block'>
-                <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
-              </div>
-              <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
-                <h5 class='text-center text-light my-1'>Deck</h5>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col heroesav">
-          <img class="mx-auto d-block" src="img/heros/HeroPortraits/ROGUE.png" alt="rogue" id="rogueav">
-          <h4 class="mx-auto" id-'heroName'>Rogue</h4>
-          <div class="heroesdesc mx-auto" id="roguedesc">
-            <div class="row">
-              <div class="col-md-4 mt-2 mx-auto my-auto">
-                <img class="" src="img/heros/rogue1.png" alt="rogue" id="rogue">
-              </div>
-              <div class="col-md text-center pr-md-5">
-                <h1 class="text-secondary mx-auto mb-n3 pt-2">Rogue</h1>
-                <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
-                  <p class="px-3 py-2"><i>As a skilled fighter, the knight knows when to attack and when to defend</i></p>
-                </div>
-                <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
-                  <p class="pl-3">None</p>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row px-4 py-3 deck">
-              <div class='col-1  mx-auto d-none d-lg-block'>
-                <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
-              </div>
-              <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
-                <h5 class='text-center text-light my-1'>Deck</h5>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col heroesav">
-          <img class="mx-auto d-block" src="img/heros/HeroPortraits/BARBARIAN.png" alt="barbarian" id="barbarianav">
-          <h4 class="mx-auto" id-'heroName'>Barbarian</h4>
-          <div class="heroesdesc mx-auto" id="knightdesc">
-            <div class="row">
-              <div class="col-md-4 mt-2 mx-auto my-auto">
-                <img class="" src="img/heros/barb1.png" alt="barbarian" id="barbarian">
-              </div>
-              <div class="col-md text-center pr-md-5">
-                <h1 class="text-secondary mx-auto mb-n3 pt-2">Barbarian</h1>
-                <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
-                  <p class="px-3 py-2"><i>As a skilled fighter, the knight knows when to attack and when to defend</i></p>
-                </div>
-                <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
-                  <p class="pl-3">None</p>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row px-4 py-3 deck">
-              <div class='col-1  mx-auto d-none d-lg-block'>
-                <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
-              </div>
-              <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
-                <h5 class='text-center text-light my-1'>Deck</h5>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col heroesav">
-          <img class="mx-auto d-block" src="img/heros/HeroPortraits/CLERIC.png" alt="cleric" id="cleric">
-          <h4 class="mx-auto" id-'heroName'>Cleric</h4>
-          <div class="heroesdesc mx-auto" id="clericdesc">
-            <div class="row">
-              <div class="col-md-4 mt-2 mx-auto my-auto">
-                <img class="" src="img/heros/cleric1.png" alt="cleric" id="cleric">
-              </div>
-              <div class="col-md text-center pr-md-5">
-                <h1 class="text-secondary mx-auto mb-n3 pt-2">Cleric</h1>
-                <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
-                  <p class="px-3 py-2"><i>As a skilled fighter, the knight knows when to attack and when to defend</i></p>
-                </div>
-                <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
-                  <p class="pl-3">None</p>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row px-4 py-3 deck">
-              <div class='col-1  mx-auto d-none d-lg-block'>
-                <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
-              </div>
-              <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
-                <h5 class='text-center text-light my-1'>Deck</h5>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col heroesav">
-          <img class="mx-auto d-block" src="img/heros/HeroPortraits/HUNTSMAN.png" alt="huntsman" id="huntsmanav">
-          <h4 class="mx-auto" id-'heroName'>Huntsman</h4>
-          <div class="heroesdesc mx-auto" id='huntsmndesc'>
-            <div class="row">
-              <div class="col-md-4 mt-2 mx-auto my-auto">
-                <img class="" src="img/heros/hunter1.png" alt="huntsman" id="huntsman">
-              </div>
-              <div class="col-md text-center pr-md-5">
-                <h1 class="text-secondary mx-auto mb-n3 pt-2">Huntsman</h1>
-                <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
-                  <p class="px-3 py-2"><i>As a skilled fighter, the knight knows when to attack and when to defend</i></p>
-                </div>
-                <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
-                  <p class="pl-3">None</p>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row px-4 py-3 deck">
-              <div class='col-1  mx-auto d-none d-lg-block'>
-                <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
-              </div>
-              <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
-                <h5 class='text-center text-light my-1'>Deck</h5>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col heroesav">
-          <img class="mx-auto d-block" src="img/heros/HeroPortraits/WITCHER.png" alt="witcher" id="witcherav">
-          <h4 class="mx-auto" id-'heroName'>Witcher</h4>
-          <div class="heroesdesc mx-auto" id="witcherdesc">
-            <div class="row">
-              <div class="col-md-4 mt-2 mx-auto my-auto">
-                <img class="" src="img/heros/witcher1.png" alt="knight" id="witcher">
-              </div>
-              <div class="col-md text-center pr-md-5">
-                <h1 class="text-secondary mx-auto mb-n3 pt-2">Witcher</h1>
-                <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
-                  <p class="px-3 py-2"><i>As a skilled fighter, the knight knows when to attack and when to defend</i></p>
-                </div>
-                <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
-                  <p class="pl-3">None</p>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row px-4 py-3 deck">
-              <div class='col-1  mx-auto d-none d-lg-block'>
-                <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
-              </div>
-              <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
-                <h5 class='text-center text-light my-1'>Deck</h5>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col heroesav">
-          <img class="mx-auto d-block" src="img/heros/HeroPortraits/SHAMAN.png" alt="knight" id="shamandesc">
-          <h4 class="mx-auto" id-'heroName'>Shaman</h4>
-          <div class="heroesdesc mx-auto" id="shamandesc">
-            <div class="row">
-              <div class="col-md-4 mt-2 mx-auto my-auto">
-                <img class="" src="img/heros/shaman1.png" alt="shaman" id="shaman">
-              </div>
-              <div class="col-md text-center pr-md-5">
-                <h1 class="text-secondary mx-auto mb-n3 pt-2">Shaman</h1>
-                <div class='card rounded-lg ml-4 ml-lg-1 mt-4'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">General</h6>
-                  <p class="px-3 py-2"><i>As a skilled fighter, the knight knows when to attack and when to defend</i></p>
-                </div>
-                <div class='card mt-2 rounded-lg mt-4 ml-4 ml-lg-1'>
-                  <h6 class="text-center bg-secondary text-light rounded-top">Talent:</h6>
-                  <p class="pl-3">None</p>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 3</h6>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                </div>
-                <div class="row px-3 mt-4 abilities">
-                  <h6 class="bg-secondary text-light col-12 rounded-top mb-n1">Abilities LEVEL 6</h6>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                  <div class="col card pt-2 mt-1">
-                    <h6>Arrow Rain</h6>
-                    <p><i>Deal 10 damage to an enemy</i></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row px-4 py-3 deck">
-              <div class='col-1  mx-auto d-none d-lg-block'>
-                <h4 class='text-center text-light bg-secondary rounded-lg py-4 mt-2'>D<br>E<br>C<br>K</h4>
-              </div>
-              <div class='col-12 mx-auto d-block d-lg-none bg-secondary rounded-lg my-2'>
-                <h5 class='text-center text-light my-1'>Deck</h5>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-              <div class='col-md-2 col-6 mx-auto'>
-                <img src="img/cards/heavyStrike.png">
-                <p class='text-center text-light bg-secondary rounded-lg ml-2'>x 4</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-</div>
 </section>
 
 <span style="color:transparent" id="mCollection">x</span>
