@@ -66,17 +66,17 @@ jQuery(document).ready(function($){
  var height = $("#map").height();
  var position = $("#map").offset();
 
-$('.area').hover(function(){
-  if ($('a', this).attr('id') == 'shop'){
-    $('a', this).offset({left:(position.left + (width * 0.27)),top:(position.top + (height * 0.33))});
-  } else if ($('a', this).attr('id') == 'chest') {
-    $('a', this).offset({left:(position.left + (width * 0.42)),top:(position.top + (height * 0.2))});
-  }
-  $('a', this).trigger('click');
-}, function(){
-  $('a', this).trigger('click')
-  $('.exactdiv img:first-child').css({'visibility':'visible'})
-});
+//$('.area').hover(function(){
+//  if ($('a', this).attr('id') == 'shop'){
+//    $('a', this).offset({left:(position.left + (width * 0.27)),top:(position.top + (height * 0.33))});
+//  } else if ($('a', this).attr('id') == 'chest') {
+//    $('a', this).offset({left:(position.left + (width * 0.42)),top:(position.top + (height * 0.2))});
+//  }
+//  $('a', this).trigger('click');
+//}, function(){
+//  $('a', this).trigger('click')
+//  $('.exactdiv img:first-child').css({'visibility':'visible'})
+//});
 
 //choose heroes menu toggle on small screen
 
@@ -300,30 +300,50 @@ $('#next').click(function(){ //turn right
 //monsters collection
 $(window).on('load', function(){ //on window load load monsters info from external file
   $('.monsters').load('img/monsternames1.html', function(){
+    $('.mAbilities').load('img/monsterAbilities.html', function(){
     $('.monsters').trigger('click');
+  })
   });
   $('.monsters').click(function() {
-    var mNames = $('.monsters');
-    var mArrayAll = mNames.html().split(/\n/); //split info frome xternal file to an array (each item is 1 enemy info)
+
+    var mNames = $('.monsters'); //all monster names loaded from file
+    var mArrayAll = mNames.html().split(/\n/); //split info frome file to an array (each item is 1 enemy info)
+
     var mArray;
-    var index;
+    var mAbilities;
+    let index;
     var i;
-    for (index=0; index < mArrayAll.length; index++) { //split each array item into seperate arrays
+    var mAbilitiesAll = $('.mAbilities').html().split(/\;/).sort();
+    mAbilitiesAll.shift()
+    var mAbilitiesList = []
+    var ab;
+    for (ab = 0; ab < mAbilitiesAll.length; ab++) {
+      mAbilities = mAbilitiesAll[ab]
+      var tre = mAbilities.indexOf(':') + 1
+      var mAbility = mAbilities.replace(mAbilities.substring(0, tre), '').trim()
+      mAbilitiesList.push(mAbility)
+
+    }
+    $('.mAbilities').html(mAbilitiesList)
+    for (index=0; index < mArrayAll.length-1; index++) { //split each array item into seperate arrays
       //mArray[i] holds specific data about a specific (from mArrayAll[index]) monster (name, world, ability)
       mArray = mArrayAll[index].split(/\;/);
+      console.log(mArray[2])
+      var abil = mArray[2].replace(mArray[2].substring(0, mArray[2].length), mAbilitiesList[index])
       //add html elements, each holding specific enemy
+
       for (i=0; i < mArray.length-1 && mArray.length < 4; i+=2) {
         var monsterName = mArray[0].substring(0, mArray[0].length-4).replace("_", " "); //remove .PNG from monster name
         $('.monster').append('<div class="col-lg-4 col-sm-6 mItem"><div class="card mb-2"><h5 class="mName text-light bg-secondary rounded text-center">'
         + monsterName.toLowerCase() + '</h5><div class="row mx-auto mb-2"><div class="col-lg-5 col-10 mx-auto"><img class="rounded" src="img/monsters/'
-        + mArray[0] + '"></div><div class="col my-auto"><p>Ability: <br>' + mArray[2] + '</p><p class="pWorlds">Worlds: <br>' + mArray[1] + '</div></div><div></div>');
+        + mArray[0] + '"></div><div class="col my-auto"><p><b>Ability: </b><br>' + abil + '</p><p class="pWorlds"><b>Worlds: </b><br>' + mArray[1] + '</div></div><div></div>');
         $('.monsters').hide();
       }
       for (i=0; i < mArray.length-1 && mArray.length == 4; i+=3) { //adds bosses with red background around name
         var monsterName = mArray[0].substring(0, mArray[0].length-4).replace("_", " "); //remove .PNG from monster name
         $('.monster').append('<div class="col-lg-4 col-sm-6 mItem"><div class="card mb-2"><h5 class="mName text-light bg-danger rounded text-center">'
         + monsterName.toLowerCase() + '</h5><div class="row mx-auto mb-2"><div class="col-lg-5 col-10 mx-auto"><img class="rounded" src="img/monsters/'
-        + mArray[0] + '"></div><div class="col my-auto"><p>Ability: <br>' + mArray[2] + '</p><p class="pWorlds">Worlds: <br>' + mArray[1] + '</p></div></div><div></div>');
+        + mArray[0] + '"></div><div class="col my-auto"><p><b>Ability: </b><br>' + abil + '</p><p class="pWorlds"><b>Worlds: </b><br>' + mArray[1] + '</p></div></div><div></div>');
         $('.monsters').hide();
       }
     }
@@ -331,6 +351,9 @@ $(window).on('load', function(){ //on window load load monsters info from extern
 })
 //toggle monster collection showing more or less of them on the screen
 $(".moreOrLess").click(function(){
+  $(".monster div:nth-child(n+11)").toggle()
+})
+$('.backWorlds').click(function(){
   $(".monster div:nth-child(n+11)").toggle()
 })
 $(".hideOrShow").click(function(){
@@ -356,7 +379,6 @@ function checkbox() {
   $(".mItem").removeClass('d-none')
   $(".pWorlds").each(function(){
     var monster = $(this).parent().parent().parent()
-    console.log(checkedVal)
     if ($(this).text().match(y) == null && checkedVal.length !== 1) {
       monster.parent().addClass('d-none')
     //  monster.toggle()
@@ -367,7 +389,6 @@ function checkbox() {
 var boss = $('.mItem').find('.bg-danger').parent().parent()
 $('.mItem').each(function(){
   if ($(this).css('display') !== 'none' && enemyType.val()=='boss') {
-    console.log($(this).css('display') !== 'none')
     $(".mItem").not(boss).addClass('d-none')
   } else if (($(this).css('display') !== 'none' && enemyType.val()=='normal')) {
     boss.addClass('d-none')

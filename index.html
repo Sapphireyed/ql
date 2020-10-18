@@ -86,10 +86,10 @@
   <img id='logo2' src="logo.png" alt='logo' class="mx-auto d-block mt-4" >
 </div>
 <a href='https://play.google.com/store/apps/details?id=games.roguelike.slaythetitan&hl=en'
-   style='position: absolute; top: 82%; width: 100%;' target='_blank'>
+   style='position: absolute; top: 82%; width: 80%;' target='_blank'>
   <img id='Google Play' src="google.png" alt='logo' class="d-md-none my-auto mx-auto d-block"></a>
   <a href='https://tiny.cc/QL-discord'
-     style='position: absolute; top: 91%; width: 100%;' target='_blank'>
+     style='position: absolute; top: 91%; width: 80%;' target='_blank'>
     <img id='Google Play' src="discord.png" alt='logo' class="d-md-none my-auto mx-auto d-block"></a>
 
     <span style="color:transparent" id="heroes">x</span>
@@ -707,13 +707,13 @@
       <div class="exactdiv-worlds col-lg-9">
          <div class="row mainworld">
            <div id="mapdesc" class="mx-4 text-secondary row">
-              <span class="col-lg-5 col-12 small">Hover over an object to see its description</span>
+              <span class="col-lg-5 col-12 small">Choose the world to see all inhabiting it monsters</span>
               <span class='col-lg-7 hidden-lg-down'></span>
               <span class='col-lg col-12 small'>Use
                 <button type="button" class="btn text-secondary" id='zoommap'><i class="fa fa-search-plus fa-"></i></button> to zoom the map</span>
            </div>
           <span class='zoom' id='ex1'><img class="mx-auto" src="img/map.png" alt="map" usemap="#main-map" id="map"></span>
-            <map name="main-map">
+            <!--<map name="main-map">
               <div class="area">
                 <area shape="circle" coords="340,352,60" alt="shop" href="#" id="shoparea">
                 <a id="shop" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">x</a>
@@ -722,7 +722,7 @@
                 <area shape="circle" coords="540,206,60" alt="chest" href="#" id="chestarea">
                 <a id="chest" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">x</a>
               </div>
-            </map>
+            </map>-->
           </div>
       </div>
       <div class='col-lg-3 rounded-lg legend' style="background-color: #E6E6E6">
@@ -798,12 +798,14 @@
         <div class="col-lg my-auto">
           <input type="text" placeholder="Search.." title="Type in a name" class="float-right my-auto rounded d-none d-md-block mSearch">
           <br><br class="d-none d-md-block">
+          <a class="btn btn-secondary btn-pill my-auto float-right"href='#worlds'>Back to Worlds</a>
           <a class="btn btn-secondary btn-pill my-auto float-right moreOrLess">Show More/Less</a>
         </div>
       </form>
     </div>
     <div class='mx-auto monster row mt-1'>
       <h4 class='text-center col-12 monsters'>MONSTERS</h4>
+      <h4 class='d-none mAbilities'></h4>
     </div>
   </div>
 </section>
