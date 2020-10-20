@@ -40,7 +40,7 @@
 				position: 'absolute',
 				top: 0,
 				left: 0,
-				opacity: 0,
+				opacity: 1,
 				width: img.width * magnify,
 				height: img.height * magnify,
 				border: 'none',
@@ -175,6 +175,7 @@
 							}
 						}
 					);
+					$('#zoomout').on('click', start)
 				} else if (settings.on === 'toggle') {
 					$source.on('click.zoom',
 						function (e) {
@@ -191,13 +192,17 @@
 
 					$source
 						.on('mouseenter.zoom', start)
-						.on('mouseleave.zoom', stop)
+					//	.on('mouseleave.zoom', stop)
 						.on(mousemove, zoom.move)
-						.on('mouseenter.zoom', function(){
-							$("#map").css({'visibility':'hidden'})
-						})
-						.on('mouseleave.zoom', function(){
-							$("#map").css({'visibility':'visible'})
+					//	.on('mouseenter.zoom', function(){
+					//		$("#map").css({'visibility':'hidden'})
+					//	})
+			  	//	.on('mouseleave.zoom', function(){
+			 		//	$("#map").css({'visibility':'visible'})
+					//		})
+							$('#zoomout').on('click', function(){
+								stop();
+					    	$('.exactdiv-worlds img:first-child').css({'visibility': 'visible'})
 							})
 				}
 
