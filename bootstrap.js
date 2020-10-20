@@ -4,6 +4,7 @@ jQuery(document).ready(function($){
   var x = window.matchMedia("(max-width: 760px)")
   $(window).on('load', function(){
     $('#knightdesc').trigger('click');
+    $('#mystic').trigger('click');
   })
   // enebles bs4 tootips
  $('[data-toggle="popover"]').popover();
@@ -92,32 +93,31 @@ jQuery(document).ready(function($){
 //zoom map
   $('#zoommap').on('click', function(){
     $('#ex1').zoom();
+//    $('.zoomImg').css({'top': '-191.609px', 'left': '-309.436px', 'opacity': '1'})
     $('.exactdiv-worlds img:first-child').css({'visibility': 'hidden'})
-    $('.exactdiv-worlds').mouseleave(function(){
-      $('.exactdiv-worlds img:first-child').css({'visibility': 'visible'})
-    })
   })
+
 
   //choose world map
   $('.worldsav img').each(function(){
-    console.log(this.getAttribute('src'))
     $(this).on('click', function(){
-      var world = this.getAttribute('alt')
-      console.log(world)
-      console.log(this.getAttribute('alt'))
       $('.exactdiv-worlds img').remove()
       $(this).parent().find('.worldmap').show();
       $(this).parent().find('.worldmap').clone().appendTo('#ex1');
       $(this).parent().find('.worldmap').hide()
-      document.getElementById("mCollectionLink").click()
-      $('.form-check-1').find("input:checkbox").each(function(){
-        if ($(this).val() == world) {
-          $('#enemies').find("input:checkbox").not($(this)).prop('checked', false)
-          $(this).prop('checked', true)
-          $('#enemies').find("input:checkbox").change()
-          console.log($(this).val() == world)
-        }
-      })
+    })
+  })
+  //go to monsters from world selection
+  $('#monstersInWorld').click(function(){
+    var world = $('.exactdiv-worlds').find('img');
+    var worldAlt = world[0].getAttribute('alt');
+    $('.form-check-1').find("input:checkbox").each(function(){
+      if ($(this).val() == worldAlt) {
+        $('#enemies').find("input:checkbox").not($(this)).prop('checked', false)
+        $(this).prop('checked', true)
+        $('#enemies').find("input:checkbox").change()
+        console.log($(this).val() == world)
+      }
     })
   })
   //choose hero
@@ -331,19 +331,21 @@ $(window).on('load', function(){ //on window load load monsters info from extern
       console.log(mArray[2])
       var abil = mArray[2].replace(mArray[2].substring(0, mArray[2].length), mAbilitiesList[index])
       //add html elements, each holding specific enemy
-
       for (i=0; i < mArray.length-1 && mArray.length < 4; i+=2) {
         var monsterName = mArray[0].substring(0, mArray[0].length-4).replace("_", " "); //remove .PNG from monster name
         $('.monster').append('<div class="col-lg-4 col-sm-6 mItem"><div class="card mb-2"><h5 class="mName text-light bg-secondary rounded text-center">'
         + monsterName.toLowerCase() + '</h5><div class="row mx-auto mb-2"><div class="col-lg-5 col-10 mx-auto"><img class="rounded" src="img/monsters/'
-        + mArray[0] + '"></div><div class="col my-auto"><p><b>Ability: </b><br>' + abil + '</p><p class="pWorlds"><b>Worlds: </b><br>' + mArray[1] + '</div></div><div></div>');
+        + mArray[0] + '"></div><div class="col my-auto"><p><b>Ability: </b><br>' + abil + '</p><p class="pWorlds"><b>Worlds: </b><br>' + mArray[1]
+        + '</p><p class="pAct"><b>Act:</b>' + mArray[2] + '</p></div></div><div></div>');
         $('.monsters').hide();
       }
-      for (i=0; i < mArray.length-1 && mArray.length == 4; i+=3) { //adds bosses with red background around name
+      //adding a function to recognize bosses in order to style them
+      for (i=0; i < mArray.length-1 && mArray.length == 4; i+=3) {
         var monsterName = mArray[0].substring(0, mArray[0].length-4).replace("_", " "); //remove .PNG from monster name
         $('.monster').append('<div class="col-lg-4 col-sm-6 mItem"><div class="card mb-2"><h5 class="mName text-light bg-danger rounded text-center">'
         + monsterName.toLowerCase() + '</h5><div class="row mx-auto mb-2"><div class="col-lg-5 col-10 mx-auto"><img class="rounded" src="img/monsters/'
-        + mArray[0] + '"></div><div class="col my-auto"><p><b>Ability: </b><br>' + abil + '</p><p class="pWorlds"><b>Worlds: </b><br>' + mArray[1] + '</p></div></div><div></div>');
+        + mArray[0] + '"></div><div class="col my-auto"><p><b>Ability: </b><br>' + abil + '</p><p class="pWorlds"><b>Worlds: </b><br>' + mArray[1]
+        + '</p><p class="pAct"><b>Act:</b> 1, 2, 3</p></div></div><div></div>');
         $('.monsters').hide();
       }
     }
@@ -368,30 +370,48 @@ $(".mSearch").on("keyup", function() {
   });
 // filter monsters with checkboxes
 function checkbox() {
-
-  var checkedBoxes = $('.form-check-1').find("input:checkbox:checked");
-  var checkedVal = ['All']
-  var enemyType = $('.form-check-2').find("input:checkbox:checked")
+  //worlds filter
+  var checkedBoxes = $('.form-check-1').find("input:checkbox:checked"); //worlds
+  var checkedVal = ['All'] //will hold of values of checked worlds checkboxes
+  //get the values of checked boxes to perform search for all checked
   checkedBoxes.each(function(){
     checkedVal.push($(this).val())
   })
-  var y = new RegExp(checkedVal.join('|'))
+  var worldVal = new RegExp(checkedVal.join('|'))
   $(".mItem").removeClass('d-none')
   $(".pWorlds").each(function(){
     var monster = $(this).parent().parent().parent()
-    if ($(this).text().match(y) == null && checkedVal.length !== 1) {
+    if ($(this).text().match(worldVal) == null && checkedVal.length !== 1) {
       monster.parent().addClass('d-none')
     //  monster.toggle()
-    } else if ($(this).text().match(y) == null && checkedVal.length == 1) {
+  } else if ($(this).text().match(worldVal) == null && checkedVal.length == 1) {
       monster.show()
     }
   })
+  //type Filter
+var enemyType = $('.form-check-2').find("input:checkbox:checked")//type
 var boss = $('.mItem').find('.bg-danger').parent().parent()
 $('.mItem').each(function(){
   if ($(this).css('display') !== 'none' && enemyType.val()=='boss') {
     $(".mItem").not(boss).addClass('d-none')
   } else if (($(this).css('display') !== 'none' && enemyType.val()=='normal')) {
-    boss.addClass('d-none')
+    boss.addClass('d-none');
+  }
+})
+//act filter
+var enemyAct = $('.form-check-3').find("input:checkbox:checked")//act
+var checkedAct = [];
+enemyAct.each(function(){
+  checkedAct.push($(this).val());
+})
+var actVal = new RegExp(checkedAct.join('|'));
+$(".pAct").each(function(){
+  var monsterAct = $(this).parent().parent().parent()
+  if ($(this).text().match(actVal) == null) {
+    monsterAct.parent().addClass('d-none')
+  //  monster.toggle()
+} else if ($(this).text().match(actVal) == null) {
+    monsterAct.show()
   }
 })
 }

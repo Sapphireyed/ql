@@ -3,11 +3,7 @@ body {font-family: Georgia, serif;font-variant: small-caps}
 .container {max-width:85vw}
 img {max-width: 100%; height:auto}
 h1 {text-align:center}
-#dark {
-  position: absolute;
-  right:3%
-}
-/* adding new  */
+/* adding new  classes to easier style elements*/
 .text-white {color:white}
 .text-black {color: black;}
 .bg-transparent {background-color: transparent}
@@ -36,8 +32,8 @@ h1 {text-align:center}
   background-image:;
   background-size: cover;
   background-position: center;
-  height: 820px;
-  width: 1750px;
+  height: 625px;
+  width: 1700px;
   animation: slide-bg 18s linear infinite;
   animation-direction: alternate
 }
@@ -46,7 +42,7 @@ h1 {text-align:center}
   transform: translate3d(0, 0, 0);
 }
 100%{
-  transform: translate3d(-232px, 0, 0);
+  transform: translate3d(-180px, 0, 0);
 }
 }
 .features {width: 80%}
@@ -57,9 +53,9 @@ h1 {text-align:center}
   text-shadow: 1px 1px white;
   background-color: rgba(248,249,250, 0.5);
   position:absolute;
-  bottom: 16%;
-  left:60px;
-  width:39%
+  bottom: 24%;
+  left:4%;
+  width:36%
 }
 
 .features li, .features-mob li{opacity:0}
@@ -95,12 +91,6 @@ h1 {text-align:center}
   font-size: 1.3rem;
 }
 .heroesdesc {display:none}
-#mapdesc {
-  position:absolute;
-  top:5%;
-  font-size:;
-  left: 5%;
-}
 #prev, #next {
   position: absolute;
   top:55%;

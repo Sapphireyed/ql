@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="qlstyle.css">
+<link rel="stylesheet" href="qlstyle.css"> <!--CSS-->
 <script src="https://kit.fontawesome.com/0b5e8097db.js" crossorigin="anonymous"></script>
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
@@ -37,17 +37,17 @@
       <img src="logo.png" class=""
            alt="logo" width="130"></a>
 </nav>
-
+<!--mvoing banner-->
 <section class='bg-dark py-3 main-wrapper' id='wrapper-main'>
 <div class="container-fluid main" id='main' style="margin-top: 50px">
 </div>
 </section>
-
+<!--conntent within the banner big screen-->
 <img id='logo' src="logo.png" alt='logo' class="d-md-block d-none my-auto"
      style='position: absolute; top: 100px; width: 600px; left:42px'>
 
   <ul class="list-group list-unstyled list-group-flush features text-black">
-    <li class="list-group-item rounded-lg"  id='firstFeature'>
+    <li class="list-group-item rounded-lg">
       <i class="fa fa-star text-warning"></i>
       Deck building adventure Card RPG game with roguelike elements</li>
     <li class="list-group-item rounded-lg">
@@ -76,12 +76,11 @@
       Play Offline</li>
   </ul>
   <a href='https://play.google.com/store/apps/details?id=games.roguelike.slaythetitan&hl=en'
-     style='position: absolute; top: 86%; width: 300px; left:60px' target='_blank'>
+     style='position: absolute; bottom: 14%; width: 17%; left:60px' target='_blank'>
     <img id='Google Play' src="google.png" alt='logo' class="d-md-block d-none my-auto shadow"></a>
     <a href='https://tiny.cc/QL-discord'
-       style='position: absolute; top: 86%; width: 300px; left:360px' target='_blank'>
+       style='position: absolute; bottom: 14%; width: 17%; left:350px' target='_blank'>
       <img id='iscord' src="discord.png" alt='logo' class="d-md-block d-none my-auto shadow"></a>
-
 <div class="d-md-none mx-auto" style='position:absolute; top:50px'>
   <img id='logo2' src="logo.png" alt='logo' class="mx-auto d-block mt-4" >
 </div>
@@ -93,11 +92,11 @@
     <img id='Google Play' src="discord.png" alt='logo' class="d-md-none my-auto mx-auto d-block"></a>
 
     <span style="color:transparent" id="heroes">x</span>
-    <section class="container shadow" style="margin-top: 40px">
+    <section class="container shadow" style="margin-top: 10px">
       <div class="row">
         <div class="col-lg-9 row">
-          <div class='col 12 pt-3'>
-            <h2 class="text-center text-light bg-secondary rounded-lg py-2">Become a legendary Hero</h2>
+          <div class='col-12 pt-3'>
+            <h2 class="text-center text-light bg-secondary rounded-lg py-2 ">Hero info</h2>
           </div>
           <div class='exactdiv'></div>
           <button type="button" class="btn text-secondary border rounded" id="next"><b> > </b></button>
@@ -106,7 +105,7 @@
 
 
         <div class="col-lg-3 heroes py-3 rounded-lg" style="background-color: #E6E6E6">
-          <h2 class="text-light bg-secondary py-2 rounded-lg text-center">Choose your hero</h2>
+          <h2 class="text-light bg-secondary py-2 rounded-lg text-center">All Heroes</h2>
           <div class="row row-cols-2 row-cols-md-4 row-cols-lg-2 pt-3 pb-5">
 
             <div class="col heroesav">
@@ -670,49 +669,51 @@
 <section class="container shadow mt-5" >
 
     <div class="row rounded-lg" style="background-color: #E6E6E6">
-      <h2 class="col-12 text-light bg-secondary py-2 rounded-lg text-center explore">Explore unique worlds</h2>
+      <h2 class="col-12 text-light bg-secondary py-2 rounded-lg text-center explore">Worlds & map objects</h2>
         <div class="col-lg col-6 col-md-4 my-2 worldsav pb-2">
-          <img src="img/worlds/FOREST.png" alt='Mystic Forest' class='rounded'>
+          <img src="img/worlds/FOREST.png" alt='Mystic Forest' class='rounded' id='mystic'>
           <h6 class="text-light">Mystic Forest</h6>
-          <img src='img/map.png' class='worldmap'>
+          <img src='img/map.png' class='worldmap' alt='Mystic Forest'>
         </div>
         <div class="col-lg col-6 col-md-4 my-2 worldsav">
           <img src="img/worlds/FROZEN_LANDS.png" alt='Frozen Lands' class='rounded'>
           <h6 class="text-light">Frozen Lands</h6>
-          <img src='img/frozen.png' class='worldmap'>
+          <img src='img/frozen.png' class='worldmap' alt='Frozen Lands'>
         </div>
         <div class="col-lg col-6 col-md-4 my-2 worldsav">
           <img src="img/worlds/PLAINS.png" alt='Great Plains' class='rounded'>
           <h6 class="text-light">Great Plains</h6>
-          <img src='img/map.png' class='worldmap'>
+          <img src='img/map.png' class='worldmap' alt='Great Plains'>
         </div>
         <div class="col-lg col-6 col-md-4 my-2 worldsav">
           <img src="img/worlds/LAVA_CAVE.png" alt='Lava Caves' class='rounded'>
           <h6 class="text-light" style='left:50%'>Lava<br>Caves</h6>
-          <img src='img/map.png' class='worldmap'>
+          <img src='img/map.png' class='worldmap' alt='Lava Caves'>
         </div>
         <div class="col-lg col-6 col-md-4 my-2 worldsav">
           <img src="img/worlds/DESERT.png" alt='Cruel Desert' class='rounded'>
           <h6 class="text-light">Cruel Desert</h6>
-          <img src='img/map.png' class='worldmap'>
+          <img src='img/map.png' class='worldmap' alt='Cruel Desert'>
         </div>
         <div class="col-lg col-6 col-md-4 my-2 worldsav">
           <img src="img/worlds/POISONED_LANDS.png" alt='Toxic Lands' class='rounded'>
           <h6 class="text-light">Toxic Lands</h6>
-          <img src='img/map.png' class='worldmap'>
+          <img src='img/map.png' class='worldmap' alt='Toxic Lands'>
         </div>
     </div>
 
     <div class="row">
+      <div id="mapdesc" class="mb-n2 text-secondary col-12 pt-1">
+         <span class='col-lg-7 hidden-lg-down'></span>
+         <span class='col-lg col-12 small'>
+           <button type="button" class="btn text-secondary border-secondary" id='zoommap'><i class="fa fa-search-plus"></i></button>
+           <button type="button" class="btn text-secondary border-secondary" id='zoomout'><i class="fa fa-search-minus"></i></button>
+           <a class='btn btn-pill border-secondary' id='monstersInWorld' href='#mCollection'>See monsters</a>
+         </span>
+      </div>
       <div class="exactdiv-worlds col-lg-9">
          <div class="row mainworld">
-           <div id="mapdesc" class="mx-4 text-secondary row">
-              <span class="col-lg-5 col-12 small">Choose the world to see all inhabiting it monsters</span>
-              <span class='col-lg-7 hidden-lg-down'></span>
-              <span class='col-lg col-12 small'>Use
-                <button type="button" class="btn text-secondary" id='zoommap'><i class="fa fa-search-plus fa-"></i></button> to zoom the map</span>
-           </div>
-          <span class='zoom' id='ex1'><img class="mx-auto" src="img/map.png" alt="map" usemap="#main-map" id="map"></span>
+          <span class='zoom' id='ex1'><!--<img class="mx-auto" src="img/map.png" alt="map" usemap="#main-map" id="map">--></span>
             <!--<map name="main-map">
               <div class="area">
                 <area shape="circle" coords="340,352,60" alt="shop" href="#" id="shoparea">
@@ -725,7 +726,7 @@
             </map>-->
           </div>
       </div>
-      <div class='col-lg-3 rounded-lg legend' style="background-color: #E6E6E6">
+      <div class='col-lg-3 rounded-lg legend mt-n4' style="background-color: #E6E6E6">
         <h4 class='text-center text-light bg-secondary rounded-lg'>Legend:</h4>
         <div class='row py-2 ml-1'>
             <div class='col-lg-8 py-1'>
@@ -764,7 +765,7 @@
   <div id='enemies'>
     <div style="background-color: #E6E6E6">
       <button class="btn btn-secondary btn-pill hideOrShow d-inline float-right">Filter</button>
-      <h1 class='text-center text-light bg-secondary rounded-lg'>Fight dreadful monster</h1>
+      <h1 class='text-center text-light bg-secondary rounded-lg'>Monsters Collection</h1>
       <form id="mFilter" class="row mx-3">
         <input type="text" placeholder="Search.." title="Type in a name" class="float-right my-auto rounded d-md-none d-block mSearch">
         <div class="form-check form-check-1 col-lg">
@@ -788,6 +789,15 @@
             </div>
           </div>
         </div>
+        <div class="col-lg form-check form-check-3">
+          <p class="text-center border-bottom border-secondary">Act: </p>
+          <label class="form-check-label col-11" for="MF">Act 1</label>
+          <input type="checkbox" class="form-check-input ml-1 col-1" id="normal" name="normal" value="1">
+          <label class="form-check-label col-11" for="MF">Act 2</label>
+          <input type="checkbox" class="form-check-input ml-1 col-1" id="boss" name="boss" value="2">
+          <label class="form-check-label col-11" for="MF">Act 3</label>
+          <input type="checkbox" class="form-check-input ml-1 col-1" id="boss" name="boss" value="3">
+        </div>
         <div class="col-lg form-check form-check-2">
           <p class="text-center border-bottom border-secondary">Type: </p>
           <label class="form-check-label col-11" for="MF">Normal</label>
@@ -798,7 +808,6 @@
         <div class="col-lg my-auto">
           <input type="text" placeholder="Search.." title="Type in a name" class="float-right my-auto rounded d-none d-md-block mSearch">
           <br><br class="d-none d-md-block">
-          <a class="btn btn-secondary btn-pill my-auto float-right"href='#worlds'>Back to Worlds</a>
           <a class="btn btn-secondary btn-pill my-auto float-right moreOrLess">Show More/Less</a>
         </div>
       </form>
