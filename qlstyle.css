@@ -171,7 +171,7 @@ h1 {text-align:center}
   .deck {margin-left: 5px}
   #prev, #next {top:15%}
   #next {left:92%}
-
+  .object {max-width: 50%}
 /*  #enemies {*/
   .enemies {padding:20px}
   .enemies img {width:20%;height:auto}
