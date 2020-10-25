@@ -15,9 +15,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/image-map/dist/image-map.js"></script>
 <script src="bootstrap.js"></script>
-<style>
-
-</style>
 </head>
 
 <body class="bg-light">
@@ -78,18 +75,18 @@
   <a href='https://play.google.com/store/apps/details?id=games.roguelike.slaythetitan&hl=en'
      style='position: absolute; bottom: 14%; width: 17%; left:60px' target='_blank'>
     <img id='Google Play' src="google.png" alt='logo' class="d-md-block d-none my-auto shadow"></a>
-    <a href='https://tiny.cc/QL-discord'
-       style='position: absolute; bottom: 14%; width: 17%; left:350px' target='_blank'>
-      <img id='iscord' src="discord.png" alt='logo' class="d-md-block d-none my-auto shadow"></a>
+  <a href='https://tiny.cc/QL-discord'
+     style='position: absolute; bottom: 14%; width: 17%; left:350px' target='_blank'>
+    <img id='iscord' src="discord.png" alt='logo' class="d-md-block d-none my-auto shadow"></a>
 <div class="d-md-none mx-auto" style='position:absolute; top:50px'>
   <img id='logo2' src="logo.png" alt='logo' class="mx-auto d-block mt-4" >
 </div>
 <a href='https://play.google.com/store/apps/details?id=games.roguelike.slaythetitan&hl=en'
-   style='position: absolute; top: 82%; width: 80%;' target='_blank'>
-  <img id='Google Play' src="google.png" alt='logo' class="d-md-none my-auto mx-auto d-block"></a>
-  <a href='https://tiny.cc/QL-discord'
-     style='position: absolute; top: 91%; width: 80%;' target='_blank'>
-    <img id='Google Play' src="discord.png" alt='logo' class="d-md-none my-auto mx-auto d-block"></a>
+   style='position: absolute; top: 91%; width: 49%;' target='_blank'>
+  <img id='Google Play' src="google.png" alt='logo' class="d-md-none d-block"></a>
+<a href='https://tiny.cc/QL-discord'
+   style='position: absolute; top: 91%;left:50%; width: 49%;' target='_blank'>
+  <img id='Google Play' src="discord.png" alt='logo' class="d-md-none d-block"></a>
 
     <span style="color:transparent" id="heroes">x</span>
     <section class="container shadow" style="margin-top: 10px">
@@ -104,9 +101,9 @@
         </div>
 
 
-        <div class="col-lg-3 heroes py-3 rounded-lg" style="background-color: #E6E6E6">
+        <div class="col-lg-3 heroes pt-3 rounded-lg" style="background-color: #E6E6E6">
           <h2 class="text-light bg-secondary py-2 rounded-lg text-center">All Heroes</h2>
-          <div class="row row-cols-2 row-cols-md-4 row-cols-lg-2 pt-3 pb-5">
+          <div class="row row-cols-2 row-cols-md-4 row-cols-lg-2 pt-3">
 
             <div class="col heroesav">
               <img class="mx-auto d-block" src="img/heros/HeroPortraits/KNIGHT.png" alt="knight" id="knightav">
@@ -683,34 +680,33 @@
         <div class="col-lg col-6 col-md-4 my-2 worldsav">
           <img src="img/worlds/PLAINS.png" alt='Great Plains' class='rounded'>
           <h6 class="text-light">Great Plains</h6>
-          <img src='img/map.png' class='worldmap' alt='Great Plains'>
+          <img src='img/plains.png' class='worldmap' alt='Great Plains'>
         </div>
         <div class="col-lg col-6 col-md-4 my-2 worldsav">
           <img src="img/worlds/LAVA_CAVE.png" alt='Lava Caves' class='rounded'>
           <h6 class="text-light" style='left:50%'>Lava<br>Caves</h6>
-          <img src='img/map.png' class='worldmap' alt='Lava Caves'>
+          <img src='img/lava.png' class='worldmap' alt='Lava Caves'>
         </div>
         <div class="col-lg col-6 col-md-4 my-2 worldsav">
           <img src="img/worlds/DESERT.png" alt='Cruel Desert' class='rounded'>
           <h6 class="text-light">Cruel Desert</h6>
-          <img src='img/map.png' class='worldmap' alt='Cruel Desert'>
+          <img src='img/desert.png' class='worldmap' alt='Cruel Desert'>
         </div>
         <div class="col-lg col-6 col-md-4 my-2 worldsav">
           <img src="img/worlds/POISONED_LANDS.png" alt='Toxic Lands' class='rounded'>
           <h6 class="text-light">Toxic Lands</h6>
-          <img src='img/map.png' class='worldmap' alt='Toxic Lands'>
+          <img src='img/toxic.png' class='worldmap' alt='Toxic Lands'>
         </div>
     </div>
 
-    <div class="row">
-      <div id="mapdesc" class="mb-n2 text-secondary col-12 pt-1">
-         <span class='col-lg-7 hidden-lg-down'></span>
-         <span class='col-lg col-12 small'>
+    <div class="row" id="mapdesc">
+
+         <span class='col-12 small'>
            <button type="button" class="btn text-secondary border-secondary" id='zoommap'><i class="fa fa-search-plus"></i></button>
            <button type="button" class="btn text-secondary border-secondary" id='zoomout'><i class="fa fa-search-minus"></i></button>
-           <a class='btn btn-pill border-secondary' id='monstersInWorld' href='#mCollection'>See monsters</a>
+           <button type='button' class='btn btn-pill border-secondary' id='monstersInWorld' href='#mCollection'>See monsters</button>
          </span>
-      </div>
+
       <div class="exactdiv-worlds col-lg-9">
          <div class="row mainworld">
           <span class='zoom' id='ex1'><!--<img class="mx-auto" src="img/map.png" alt="map" usemap="#main-map" id="map">--></span>
@@ -755,8 +751,92 @@
            <img src='img/map/sanctuary.png' class='object mx-auto d-block'>
          </div>
        </div>
-    </div>
+       <div class='row py-2 ml-1'>
+           <div class='col-lg-8 py-1'>
+             <h6 class='text-center border-bottom border-secondary'>Training Ground</h6>
+             <p class='small px-1'>Upgrade stats</p>
+          </div>
+          <div class='col-lg-4 py-1 my-auto'>
+            <img src='img/map/training.png' class='object mx-auto d-block'>
+          </div>
+        </div>
+        <div class='row py-2 ml-1'>
+            <div class='col-lg-8 py-1'>
+              <h6 class='text-center border-bottom border-secondary'>Observatory</h6>
+              <p class='small px-1'>See distant lands and hidden monsters</p>
+           </div>
+           <div class='col-lg-4 py-1 my-auto'>
+             <img src='img/map/observatory.png' class='object mx-auto d-block'>
+           </div>
+         </div>
+         <div class='row py-2 ml-1'>
+             <div class='col-lg-8 py-1'>
+               <h6 class='text-center border-bottom border-secondary'>Sacrificial Altar</h6>
+               <p class='small px-1'>Sacrifice a card to earn a new one</p>
+            </div>
+            <div class='col-lg-4 py-1 my-auto'>
+              <img src='img/map/altar.png' class='object mx-auto d-block'>
+            </div>
+          </div>
+          <div class='row py-2 ml-1'>
+              <div class='col-lg-8 py-1'>
+                <h6 class='text-center border-bottom border-secondary'>Smithy</h6>
+                <p class='small px-1'>Upgrade cards in your deck</p>
+             </div>
+             <div class='col-lg-4 py-1 my-auto'>
+               <img src='img/map/smithy.png' class='object mx-auto d-block'>
+             </div>
+           </div>
+           <div class='row py-2 ml-1'>
+               <div class='col-lg-8 py-1'>
+                 <h6 class='text-center border-bottom border-secondary'>Camp</h6>
+                 <p class='small px-1'>Heal</p>
+              </div>
+              <div class='col-lg-4 py-1 my-auto'>
+                <img src='img/map/camp.png' class='object mx-auto d-block'>
+              </div>
+            </div>
+             <div class='row py-2 ml-1'>
+                 <div class='col-lg-8 py-1'>
+                   <h6 class='text-center border-bottom border-secondary'>Magical Well</h6>
+                   <p class='small px-1'>Refill Health once for free</p>
+                </div>
+                <div class='col-lg-4 py-1 my-auto'>
+                  <img src='img/map/well.png' class='object mx-auto d-block'>
+                </div>
+              </div>
+              <div class='row py-2 ml-1'>
+                  <div class='col-lg-8 py-1'>
+                    <h6 class='text-center border-bottom border-secondary'>Portal</h6>
+                    <p class='small px-1'>Go to the next act</p>
+                 </div>
+                 <div class='col-lg-3 py-1 my-auto'>
+                   <img src='img/map/portal.png' class='object mx-auto d-block'>
+                 </div>
+               </div>
+               <div class='py-2 ml-1'>
+                 <div class='row'>
+                   <div class='col-lg-8 py-1'>
+                     <h6 class='text-center border-bottom border-secondary'>Shrine to gods</h6>
+                     <p class='small px-1'>Pray to the gods.
+                       Different shrines give different effects.
+                       <span class='small' id='shrine'>More</span></p>
+                  </div>
+                  <div class='col-lg-4 py-1 my-auto'>
+                    <img src='img/map/shrine.png' class='object mx-auto d-block'>
+                  </div>
+                 </div>
+               </div>
+               <p class='small ml-3 col-12 shrineDet' style='display:none'>
+                 <b>Crom:</b> 1 extra damage to all physical damage sources. Lose a random Skill card.<br>
+                 <b>Glanis:</b>Refill your Health and grant you 20 extra HP. Lose 1 action.<br>
+                 <b>Sapphire:</b> Remove any non-upgraded Strike cards. Lose 1/3 of mah HP<br>
+                 <b>Mammon</b>Gain 50 coins. Start each fight with poison 3.<br>
+                 <b>Faust:</b>Double your starting Mana. Lose 1/3 of mah HP</p>
 
+                  <i class="fas fa-angle-down fa-2x text-secondary moreObj" style='margin-left:48%'></i>
+               </div>
+    </div>
     </div>
 </section>
 
@@ -808,7 +888,6 @@
         <div class="col-lg my-auto">
           <input type="text" placeholder="Search.." title="Type in a name" class="float-right my-auto rounded d-none d-md-block mSearch">
           <br><br class="d-none d-md-block">
-          <a class="btn btn-secondary btn-pill my-auto float-right moreOrLess">Show More/Less</a>
         </div>
       </form>
     </div>

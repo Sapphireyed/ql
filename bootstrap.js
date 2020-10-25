@@ -99,7 +99,7 @@ jQuery(document).ready(function($){
 
 
   //choose world map
-  $('.worldsav img').each(function(){
+  $('.worldsav img, .worldsav h6').each(function(){
     $(this).on('click', function(){
       $('.exactdiv-worlds img').remove()
       $(this).parent().find('.worldmap').show();
@@ -119,6 +119,24 @@ jQuery(document).ready(function($){
         console.log($(this).val() == world)
       }
     })
+  })
+  $('#shrine').click(function(){
+    $('.shrineDet').toggle()
+    if ($(this).html() == 'More') {
+      $(this).html('Less')
+    } else {
+      $(this).html('More')
+    }
+  })
+  $('.moreObj').click(function(){
+    $('.legend > div').each(function(){
+      $(this).toggle();
+      if ($(this).css('display') == 'block') {
+        $(this).not('.shrineDet').css({'display': 'flex'})
+      }
+      $('.shrineDet').hide();
+    })
+    console.log($('.legend > div'))
   })
   //choose hero
     $(".heroesav").each(function(){
