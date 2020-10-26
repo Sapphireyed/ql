@@ -1,104 +1,57 @@
 $.noConflict();
 jQuery(document).ready(function($){
-  //display 1st hero - knight - on load
-  var x = window.matchMedia("(max-width: 760px)")
+  var screenSize = window.matchMedia("(max-width: 760px)")
+
+  //on load
   $(window).on('load', function(){
-    $('#knightdesc').trigger('click');
-    $('#mystic').trigger('click');
+    $('#knightdesc').trigger('click'); //display Knight as 1st hero in heroes section
+    $('#mystic').trigger('click'); //display MF as 1st world in worlds section
+    //change backgroun opening picyure depending on user's time
+    var dateHere = new Date();
+    // day screen
+    if (dateHere.getHours() > 7 && dateHere.getHours() < 16) {
+      $('.main').css('backgroundImage',"url('img/mainpic.png')")
+    //afternoon screen
+    } else if(dateHere.getHours() > 15 && dateHere.getHours() < 20) {
+      $('.main').css('backgroundImage',"url('img/sunset.png')")
+    //night screen
+    } else {
+      $('.main').css('backgroundImage',"url('img/night.png')")
+    }
+
+    //features in main screen to slide in randomly
+    let features = document.querySelectorAll(".features li");
+       slideFeature();
+       let out = setInterval(slideOut, 4999);
+       let slideIn = setInterval(slideFeature, 5000)
+
+    function slideOut(){
+      for (var ind = 0; ind < features.length;ind++) {
+        features[ind].classList.remove('slideIn')
+      }
+    }
+    function slideFeature() {
+      let i = Math.floor(Math.random() * features.length);
+      features[i].classList.add('slideIn')
+    }
   })
-  // enebles bs4 tootips
- $('[data-toggle="popover"]').popover();
-//dark mode
-  var body = document.body;
-  var light = true;
-  function dark() {
-    body.classList.remove('bg-light');
-    body.classList.add('bg-dark');
-    $('body').children().find('.text-secondary').removeClass('text-secondary').addClass('text-white');
-    light = false;
-  }
-  function lightMode() {
-    body.classList.add('bg-light')
-    body.classList.remove('bg-dark')
-    $('body').children().find('.text-white').removeClass('text-white').addClass('text-secondary');
-    light= true;
-  }
- //document.getElementById('dark').onclick = function() {
-//  if (light) {
-//    dark();
-//  } else {
-//    lightMode();
-//  }
-//};
 
-
- // slide in features
- $(window).on('load', function(){
-   var dateHere = new Date();
-   if (dateHere.getHours() > 7 && dateHere.getHours() < 16) {
-     $('.main').css('backgroundImage',"url('img/mainpic.png')")
-   } else if(dateHere.getHours() > 15 && dateHere.getHours() < 20) {
-     $('.main').css('backgroundImage',"url('img/sunset.png')")
-   } else {
-     $('.main').css('backgroundImage',"url('img/night.png')")
-   }
-   let features = document.querySelectorAll(".features li");
-
-      slideFeature();
-      let out = setInterval(slideOut, 4999);
-      let slideIn = setInterval(slideFeature, 5000)
-
-
-   function slideOut(){
-     for (var ind = 0; ind < features.length;ind++) {
-       features[ind].classList.remove('slideIn')
-     }
-   }
-   function slideFeature() {
-     let i = Math.floor(Math.random() * features.length);
-     features[i].classList.add('slideIn')
-   }
- });
-
-
-
- // popover responsive
- var width = $("#map").width();
- var height = $("#map").height();
- var position = $("#map").offset();
-
-//$('.area').hover(function(){
-//  if ($('a', this).attr('id') == 'shop'){
-//    $('a', this).offset({left:(position.left + (width * 0.27)),top:(position.top + (height * 0.33))});
-//  } else if ($('a', this).attr('id') == 'chest') {
-//    $('a', this).offset({left:(position.left + (width * 0.42)),top:(position.top + (height * 0.2))});
-//  }
-//  $('a', this).trigger('click');
-//}, function(){
-//  $('a', this).trigger('click')
-//  $('.exactdiv img:first-child').css({'visibility':'visible'})
-//});
-
-//choose heroes menu toggle on small screen
-
-  if ( x.matches) {
+  //functions to be triggered only on small screen
+  //toggle heroes avatars
+  if (screenSize.matches) {
     $('.heroesav').hide();
-    $(".map").hide();
     $('.heroes h2:first-child').click(function(){
       $('.heroesav').toggle();
-      $('.map').show();
     })
-  }
+  } //end of small screen exclusive stuff
 
-//zoom map
+  //zoom map
   $('#zoommap').on('click', function(){
     $('#ex1').zoom();
-//    $('.zoomImg').css({'top': '-191.609px', 'left': '-309.436px', 'opacity': '1'})
     $('.exactdiv-worlds img:first-child').css({'visibility': 'hidden'})
   })
 
-
-  //choose world map
+  //choose world, displays world's map on clicking worlds miniature
   $('.worldsav img, .worldsav h6').each(function(){
     $(this).on('click', function(){
       $('.exactdiv-worlds img').remove()
@@ -120,6 +73,7 @@ jQuery(document).ready(function($){
       }
     })
   })
+  //shrine more info toggle on 'more'
   $('#shrine').click(function(){
     $('.shrineDet').toggle()
     if ($(this).html() == 'More') {
@@ -128,6 +82,7 @@ jQuery(document).ready(function($){
       $(this).html('More')
     }
   })
+  //scrolling legend
   $('.moreObj').click(function(){
     $('.legend > div').each(function(){
       $(this).toggle();
@@ -136,16 +91,15 @@ jQuery(document).ready(function($){
       }
       $('.shrineDet').hide();
     })
-    console.log($('.legend > div'))
   })
-  //choose hero
+  //choose hero clicking on hero avatar
     $(".heroesav").each(function(){
       $(this).on('click', function(event){
         //hide all heroes
         $('.heroesdesc').hide();
         // remove previous heroesdesc for turnAroundHrto to work properly
         $('.exactdiv').empty()
-        i=0;
+        i = 0;
         //show chosen hero
         //Use clone to make the function work multiple times.
         //Hide chosen hero in other places (the div from which it was cloned)
@@ -316,37 +270,33 @@ $('#next').click(function(){ //turn right
   }
 })
 //monsters collection
-$(window).on('load', function(){ //on window load load monsters info from external file
-  $('.monsters').load('img/monsternames1.html', function(){
-    $('.mAbilities').load('img/monsterAbilities.html', function(){
+$(window).on('load', function(){ //on window load load monsters info from external files
+  $('.monsters').load('img/monsternames1.html', function(){ //monster names, world and act
+    $('.mAbilities').load('img/monsterAbilities.html', function(){ //monster abilities
     $('.monsters').trigger('click');
   })
   });
   $('.monsters').click(function() {
-
-    var mNames = $('.monsters'); //all monster names loaded from file
-    var mArrayAll = mNames.html().split(/\n/); //split info frome file to an array (each item is 1 enemy info)
-
-    var mArray;
-    var mAbilities;
-    let index;
-    var i;
-    var mAbilitiesAll = $('.mAbilities').html().split(/\;/).sort();
-    mAbilitiesAll.shift()
-    var mAbilitiesList = []
-    var ab;
-    for (ab = 0; ab < mAbilitiesAll.length; ab++) {
-      mAbilities = mAbilitiesAll[ab]
+    var mNames = $('.monsters'); //all monsters loaded from file
+    var mArrayAll = mNames.html().split(/\n/); //all monsters infp, split info frome file to an array (each item is 1 enemy info)
+    var mArray; //will hold info for specific monster
+    var mAbilities; //abilities of one chosen monster
+    var index; //to loop through abilities
+    var i; //to loop throung other monster info(rom different file)
+    var mAbilitiesAll = $('.mAbilities').html().split(/\;/).sort(); //array woth all abilities per monster but together with monster's name
+    mAbilitiesAll.shift() //removes 1st object bc its empty
+    var mAbilitiesList = [] // abilities per monster after removing monster's name
+    for (var ind = 0; ind < mAbilitiesAll.length; ind++) {
+      mAbilities = mAbilitiesAll[ind]
+        //remove monster's name from abilities in order to store abilities only
       var tre = mAbilities.indexOf(':') + 1
       var mAbility = mAbilities.replace(mAbilities.substring(0, tre), '').trim()
       mAbilitiesList.push(mAbility)
-
     }
-    $('.mAbilities').html(mAbilitiesList)
     for (index=0; index < mArrayAll.length-1; index++) { //split each array item into seperate arrays
-      //mArray[i] holds specific data about a specific (from mArrayAll[index]) monster (name, world, ability)
+      //mArray[i] holds specific data about a specific (from mArrayAll[index]) monster (name, world, act)
       mArray = mArrayAll[index].split(/\;/);
-      console.log(mArray[2])
+      //abil = abilities of specific monster
       var abil = mArray[2].replace(mArray[2].substring(0, mArray[2].length), mAbilitiesList[index])
       //add html elements, each holding specific enemy
       for (i=0; i < mArray.length-1 && mArray.length < 4; i+=2) {
@@ -369,17 +319,11 @@ $(window).on('load', function(){ //on window load load monsters info from extern
     }
   })
 })
-//toggle monster collection showing more or less of them on the screen
-$(".moreOrLess").click(function(){
-  $(".monster div:nth-child(n+11)").toggle()
-})
-$('.backWorlds').click(function(){
-  $(".monster div:nth-child(n+11)").toggle()
-})
+//hide/show monster filter
 $(".hideOrShow").click(function(){
   $("#mFilter").toggle();
 })
-//search option to easier find enemies wit specific traits
+//search option to easier find enemies by name/world etc
 $(".mSearch").on("keyup", function() {
   var input = $(this).val().toLowerCase();
     $(".monster > div").filter(function(){

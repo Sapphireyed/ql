@@ -34,7 +34,7 @@
       <img src="logo.png" class=""
            alt="logo" width="130"></a>
 </nav>
-<!--mvoing banner-->
+<!--moving banner-->
 <section class='bg-dark py-3 main-wrapper' id='wrapper-main'>
 <div class="container-fluid main" id='main' style="margin-top: 50px">
 </div>
@@ -81,34 +81,34 @@
 <div class="d-md-none mx-auto" style='position:absolute; top:50px'>
   <img id='logo2' src="logo.png" alt='logo' class="mx-auto d-block mt-4" >
 </div>
+<!--buttons within the banner small screen-->
 <a href='https://play.google.com/store/apps/details?id=games.roguelike.slaythetitan&hl=en'
    style='position: absolute; top: 91%; width: 49%;' target='_blank'>
   <img id='Google Play' src="google.png" alt='logo' class="d-md-none d-block"></a>
 <a href='https://tiny.cc/QL-discord'
    style='position: absolute; top: 91%;left:50%; width: 49%;' target='_blank'>
   <img id='Google Play' src="discord.png" alt='logo' class="d-md-none d-block"></a>
-
+<!--HEROES-->
     <span style="color:transparent" id="heroes">x</span>
     <section class="container shadow" style="margin-top: 10px">
-      <div class="row">
-        <div class="col-lg-9 row">
+      <div class="row"> <!--for both specific hero and all heroes avatars-->
+        <div class="col-lg-9 row"> <!--specific hero-->
           <div class='col-12 pt-3'>
             <h2 class="text-center text-light bg-secondary rounded-lg py-2 ">Hero info</h2>
           </div>
-          <div class='exactdiv'></div>
+          <div class='exactdiv'></div> <!--info for chosen hero will be displayed here-->
+          <!-- buttons for turning around hero pic -->
           <button type="button" class="btn text-secondary border rounded" id="next"><b> > </b></button>
           <button type="button" class="btn text-secondary border rounded" id="prev"><b> < </b></button>
         </div>
-
-
-        <div class="col-lg-3 heroes pt-3 rounded-lg" style="background-color: #E6E6E6">
+        <div class="col-lg-3 heroes pt-3 rounded-lg" style="background-color: #E6E6E6"> <!--all heroes avatars to choose a hero-->
           <h2 class="text-light bg-secondary py-2 rounded-lg text-center">All Heroes</h2>
           <div class="row row-cols-2 row-cols-md-4 row-cols-lg-2 pt-3">
 
-            <div class="col heroesav">
+            <div class="col heroesav"><!--KNIGHT-->
               <img class="mx-auto d-block" src="img/heros/HeroPortraits/KNIGHT.png" alt="knight" id="knightav">
               <h4 class="mx-auto" id-'heroName'>Knight</h4>
-              <div class="heroesdesc mx-auto" id="knightdesc">
+              <div class="heroesdesc mx-auto" id="knightdesc"><!--info from here will be loaded to 'exactdiv on click'-->
                 <div class="row">
                   <div class="col-md-4 mt-2 mx-auto my-auto">
                     <img class="" src="img/heros/knight1.png" alt="knight" id="knight">
@@ -173,6 +173,7 @@
                 </div>
               </div>
             </div>
+            <!--next hero same layout. all heroes have the same layout-->
             <div class="col heroesav">
               <img class="mx-auto d-block" src="img/heros/HeroPortraits/ELEMENTALIST.png" alt="elementalist" id="elemav">
               <h4 class="mx-auto" id-'heroName'>Elementalist</h4>
@@ -661,12 +662,13 @@
       </div>
     </div>
     </section>
-
+<!--WORLDS-->
   <span style="color:transparent" id="worlds">x</span>
 <section class="container shadow mt-5" >
 
     <div class="row rounded-lg" style="background-color: #E6E6E6">
       <h2 class="col-12 text-light bg-secondary py-2 rounded-lg text-center explore">Worlds & map objects</h2>
+        <!--worlds miniature as menu bar -->
         <div class="col-lg col-6 col-md-4 my-2 worldsav pb-2">
           <img src="img/worlds/FOREST.png" alt='Mystic Forest' class='rounded' id='mystic'>
           <h6 class="text-light">Mystic Forest</h6>
@@ -698,30 +700,20 @@
           <img src='img/toxic.png' class='worldmap' alt='Toxic Lands'>
         </div>
     </div>
-
+<!--buttons to navigate the map- zoom in and out and to go to monster collection for chosen world-->
     <div class="row" id="mapdesc">
-
          <span class='col-12 small'>
            <button type="button" class="btn text-secondary border-secondary" id='zoommap'><i class="fa fa-search-plus"></i></button>
            <button type="button" class="btn text-secondary border-secondary" id='zoomout'><i class="fa fa-search-minus"></i></button>
            <a type='button' class='btn btn-pill border-secondary' id='monstersInWorld' href='#mCollection'>See monsters</a>
          </span>
-
+<!--map presenting the chosen world will be loaded here-->
       <div class="exactdiv-worlds col-lg-9">
          <div class="row mainworld">
-          <span class='zoom' id='ex1'><!--<img class="mx-auto" src="img/map.png" alt="map" usemap="#main-map" id="map">--></span>
-            <!--<map name="main-map">
-              <div class="area">
-                <area shape="circle" coords="340,352,60" alt="shop" href="#" id="shoparea">
-                <a id="shop" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">x</a>
-              </div>
-              <div class="area">
-                <area shape="circle" coords="540,206,60" alt="chest" href="#" id="chestarea">
-                <a id="chest" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">x</a>
-              </div>
-            </map>-->
-          </div>
+          <span class='zoom' id='ex1'></span>
+         </div>
       </div>
+      <!--legend-->
       <div class='col-lg-3 rounded-lg legend mt-n4' style="background-color: #E6E6E6">
         <h4 class='text-center text-light bg-secondary rounded-lg'>Legend:</h4>
         <div class='row py-2 ml-1'>
@@ -729,7 +721,7 @@
               <h6 class='text-center border-bottom border-secondary'>Shop</h6>
               <p class='small px-1'>Purchase additional cards, stats and scrolls</p>
            </div>
-           <div class='col-lg-4 py-1 my-auto'>
+           <div class='col-lg-4 col-6 py-1 my-auto'>
              <img src='img/map/shop.png' class='object mx-auto d-block'>
            </div>
          </div>
@@ -827,6 +819,7 @@
                   </div>
                  </div>
                </div>
+               <!--more details for shrine-->
                <p class='small ml-3 col-12 shrineDet' style='display:none'>
                  <b>Crom:</b> 1 extra damage to all physical damage sources. Lose a random Skill card.<br>
                  <b>Glanis:</b>Refill your Health and grant you 20 extra HP. Lose 1 action.<br>
@@ -839,16 +832,16 @@
     </div>
     </div>
 </section>
-
+<!--ENEMIES-->
 <span style="color:transparent" id="mCollection">x</span>
 <section class='container shadow mb-5' style="margin-top: 40px">
   <div id='enemies'>
     <div style="background-color: #E6E6E6">
       <button class="btn btn-secondary btn-pill hideOrShow d-inline float-right">Filter</button>
       <h1 class='text-center text-light bg-secondary rounded-lg'>Monsters Collection</h1>
-      <form id="mFilter" class="row mx-3">
+      <form id="mFilter" class="row mx-3"> <!--filter-->
         <input type="text" placeholder="Search.." title="Type in a name" class="float-right my-auto rounded d-md-none d-block mSearch">
-        <div class="form-check form-check-1 col-lg">
+        <div class="form-check form-check-1 col-lg"><!--by world-->
           <div class="row pb-3">
             <p class="text-center col-12 border-bottom border-secondary">Worlds: </p>
             <div class="col-md-6">
@@ -869,7 +862,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg form-check form-check-3">
+        <div class="col-lg form-check form-check-3"><!--by act-->
           <p class="text-center border-bottom border-secondary">Act: </p>
           <label class="form-check-label col-11" for="MF">Act 1</label>
           <input type="checkbox" class="form-check-input ml-1 col-1" id="normal" name="normal" value="1">
@@ -878,7 +871,7 @@
           <label class="form-check-label col-11" for="MF">Act 3</label>
           <input type="checkbox" class="form-check-input ml-1 col-1" id="boss" name="boss" value="3">
         </div>
-        <div class="col-lg form-check form-check-2">
+        <div class="col-lg form-check form-check-2"><!--by type-->
           <p class="text-center border-bottom border-secondary">Type: </p>
           <label class="form-check-label col-11" for="MF">Normal</label>
           <input type="checkbox" class="form-check-input ml-1 col-1" id="normal" name="normal" value="normal">
@@ -891,6 +884,7 @@
         </div>
       </form>
     </div>
+    <!--filled via js-->
     <div class='mx-auto monster row mt-1'>
       <h4 class='text-center col-12 monsters'>MONSTERS</h4>
       <h4 class='d-none mAbilities'></h4>
