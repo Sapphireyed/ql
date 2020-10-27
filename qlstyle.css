@@ -3,7 +3,6 @@ body {font-family: Georgia, serif;font-variant: small-caps}
 .container {max-width:85vw}
 img {max-width: 100%; height:auto}
 h1 {text-align:center}
-/* adding new  classes to easier style elements*/
 .text-white {color:white}
 .text-black {color: black;}
 .bg-transparent {background-color: transparent}
@@ -21,8 +20,9 @@ h1 {text-align:center}
 .navbar .dropdown-item {color:white}
 .navbar .dropdown-item:hover {color:black}
 /*opening section*/
+/*bg*/
 .main {
-  background-image: url('img/mainpic.png');
+  background-image: url('');
   background-size: cover;
   overflow: hidden;
 
@@ -45,6 +45,7 @@ h1 {text-align:center}
   transform: translate3d(-180px, 0, 0);
 }
 }
+/*features*/
 .features {width: 80%}
 .list-group-item {
   border-width: 0 0 0 !important;
@@ -68,12 +69,7 @@ h1 {text-align:center}
   from {opacity: : 0}
   to {opacity: 1}
 }
-/*img map  */
-/*.popover {position:relative}
-.popover-header {
-  background-color: #343a40;
-  color:white;
-}*/
+/*worlds*/
 .worldsav {  cursor: pointer;}
 .worldsav h6 {
   position: absolute;
@@ -100,29 +96,9 @@ h1 {text-align:center}
 }
 #next {left:30%}
 #prev {left: }
-/*#shop {
-  display:block;
-  position:absolute;
-  color:transparent;
-/*  left:33%;
-  top:57%;
-}
-#chest {
-  display:block;
-  position:absolute;
-  color:transparent;
-  top: 30%;
-  left:42%;*/
-}
-
 /*#enemies*/
 .mName {text-transform: capitalize}
 #mFilter {position:sticky; top:70px; z-index: 99}
-/* {
-  height: 38vw;
-  overflow-x: hidden;
-}*/
-
 
 @media only screen and (max-width: 760px) {
   .navbar-brand {margin-right:0 }
@@ -144,15 +120,14 @@ h1 {text-align:center}
     transform: translate3d(-1202px, 0, 0);
   }
 }
-
+  /*main screen features*/
   .list-group-item {
     width:100%;
     left:0;
     bottom:10%;
     font-size: 1.2rem;
   }
-  /*map*/
-  .popover {max-width: 50%}
+  /*worlds map*/
   #zoommap {top:30%; left: 0}
   #zoommap {top:45%; left:0}
   #mapdesc {
@@ -165,20 +140,20 @@ h1 {text-align:center}
   transform: translate(-60%, -50%);
   }
   #monstersInWorld {right:-20px}
-  .legen img {max-width:70%}
   /*heroes*/
   .abilities {margin-left: 5px}
   .deck {margin-left: 5px}
   #prev, #next {top:15%}
   #next {left:92%}
+<<<<<<< HEAD
+/*  #enemies */
+=======
   .object {max-width: 50%}
 /*  #enemies {*/
+>>>>>>> bd3582f8c2973927550bf5e4cb09c5a5a0b158a6
   .enemies {padding:20px}
   .enemies img {width:20%;height:auto}
   .enemies p {text-align: center;}
-  /*  height: 200vw;
-    overflow-x: hidden;
-  }*/
 }
 @media only screen and (min-width: 760px) {
   .heroes {right:-35px}
