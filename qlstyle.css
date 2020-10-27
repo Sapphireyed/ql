@@ -145,7 +145,16 @@ h1 {text-align:center}
   .deck {margin-left: 5px}
   #prev, #next {top:15%}
   #next {left:92%}
+<<<<<<< HEAD
 /*  #enemies */
+=======
+<<<<<<< HEAD
+/*  #enemies */
+=======
+  .object {max-width: 50%}
+/*  #enemies {*/
+>>>>>>> bd3582f8c2973927550bf5e4cb09c5a5a0b158a6
+>>>>>>> c13326af418258e2f36583a5a4a0d16f67810338
   .enemies {padding:20px}
   .enemies img {width:20%;height:auto}
   .enemies p {text-align: center;}
